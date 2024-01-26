@@ -7,7 +7,7 @@ import { BaseRequest } from '../../request/base-response.model';
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:8080/mascocare-api/login';
+  private apiUrl = 'http://localhost:8080/mascocarev1-api/login';
 
   constructor(private http: HttpClient) {}
 

@@ -11,7 +11,7 @@ export class OwnerService {
     const password = 'MonaBermudez30';
     const authHeader = 'Basic ' + btoa(username + ':' + password);
     return this.http.get(
-      'http://localhost:8080/mascocare-api/util/owners/getAllOwners',
+      'http://localhost:8080/mascocarev1-api/util/owners/getAllOwners',
       {
         headers: { Authorization: authHeader },
       }

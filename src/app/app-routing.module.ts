@@ -9,12 +9,18 @@ import { HomeComponent } from './util/home/home.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/mascocare-app/security/logging',
+    redirectTo: '/mascocare-web-prototype/security/logging',
     pathMatch: 'full',
   },
-  { path: 'mascocare-app/security/logging', component: LoggingComponent },
-  { path: 'mascocare-app/owners/owners-list', component: OwnersListComponent },
-  { path: 'mascocare-app/home', component: HomeComponent },
+  {
+    path: 'mascocare-web-prototype/security/logging',
+    component: LoggingComponent,
+  },
+  {
+    path: 'mascocare-web-prototype/owners/owners-list',
+    component: OwnersListComponent,
+  },
+  { path: 'mascocare-web-prototype/home', component: HomeComponent },
 ];
 
 @NgModule({

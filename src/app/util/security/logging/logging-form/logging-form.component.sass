@@ -1,0 +1,21 @@
+@import 'src/styles.sass'
+
+#security-main-title
+    font-size: 40px
+    @include align-completely()
+#logging-form-container
+    height: $height-100
+
+input::placeholder
+    color: $overall-white
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active
+    -webkit-box-shadow: 0 0 0 30px $input-autofill inset !important
+    -webkit-text-fill-color: $overall-white
+    //font-family: 'Roboto', sans-serif !important
+
+.input
+    @include overall-input()
+    @include font-style()

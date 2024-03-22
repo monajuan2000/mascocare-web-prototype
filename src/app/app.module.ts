@@ -17,6 +17,7 @@ import { HomeRoutingModule } from './util/home/home-routing.module';
 import { ToolbarModule } from 'primeng/toolbar';
 import { AvatarModule } from 'primeng/avatar';
 import { MainToolbarComponent } from './util/home/main-toolbar/main-toolbar.component';
+import { LoggingFormComponent } from './util/security/logging/logging-form/logging-form.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MainToolbarComponent } from './util/home/main-toolbar/main-toolbar.comp
     OwnersListComponent,
     HomeComponent,
     MainToolbarComponent,
+    LoggingFormComponent,
   ],
   imports: [
     BrowserModule,

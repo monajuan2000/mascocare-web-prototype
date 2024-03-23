@@ -1,1 +1,26 @@
-<app-main-toolbar></app-main-toolbar>
+<div id="home-container">
+  <app-main-toolbar></app-main-toolbar>
+</div>
+
+<div id="gif-container"></div>
+
+<script>
+  // Función para cargar y mostrar el GIF en un bucle infinito
+  function loadGif() {
+    var gifContainer = document.getElementById("gif-container");
+    var gif = new Image();
+    gif.src = "assets/images/CAT.gif"; // Ruta del GIF
+    gif.alt = "Un GIF genial";
+    gif.width = 300;
+    gif.height = 200;
+    gifContainer.appendChild(gif);
+    gif.addEventListener("load", function () {
+      setInterval(function () {
+        gif.src = gif.src; // Forzar la recarga del GIF para mantenerlo en bucle
+      }, gif.duration * 1000); // Repetir cada vez que termine la duración del GIF
+    });
+  }
+
+  // Llamar a la función para cargar el GIF cuando la página esté completamente cargada
+  window.addEventListener("load", loadGif);
+</script>

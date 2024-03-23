@@ -14,6 +14,7 @@ export class LoggingFormComponent {
 
   onSubmit(miFormulario: any) {
     const { username, password } = miFormulario.value;
+    console.log(miFormulario.value);
     this.authService.basicLogin(username, password).subscribe({
       next: (request) => {
         this.successProcess(request);
@@ -22,6 +23,7 @@ export class LoggingFormComponent {
         this.errorProcess(error);
       },
     });
+    miFormulario.resetForm();
   }
 
   private successProcess = (request: BaseRequest): void => {

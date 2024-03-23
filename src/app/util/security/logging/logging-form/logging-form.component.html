@@ -1,15 +1,21 @@
-<div id="security-main-title" class="field col-12 md:col-12">Sign In!</div>
+<div id="security-main-title" class="field col-12 md:col-12">Welcome !</div>
 <div id="logging-form-container" class="security-component">
   <form #miFormulario="ngForm" (ngSubmit)="onSubmit(miFormulario)">
     <div class="field col-12 md:col-12">
       <span class="p-input-icon-right">
         <i class="pi pi-user color-white"></i>
         <input
-          placeholder="Username"
+          type="text"
           id="username"
-          type="username"
+          name="username"
+          ngModel
+          required
+          pInputText
+          placeholder="Username"
+          required
+          placeholder="Username"
           class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-          aria-describedby="username-help"
+          aria-describedby="password-help"
         />
       </span>
     </div>
@@ -17,28 +23,64 @@
       <span class="p-input-icon-right">
         <i class="pi pi-spin pi-cog color-white"></i>
         <input
-          placeholder="Password"
-          id="password"
           type="password"
+          id="password"
+          name="password"
+          ngModel
+          required
+          pInputText
+          placeholder="Password"
+          required
+          placeholder="Password"
           class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
           aria-describedby="password-help"
         />
       </span>
     </div>
-    <div class="field col-12 md:col-12">
-      <p-button type="submit" label="Submit"></p-button>
+
+    <p-toolbar>
+      <div class="p-toolbar-group-left">
+        <button
+          pButton
+          type="submit"
+          label="Login"
+          icon="pi pi-user"
+          class="p-button-rounded"
+          style="width: 10rem"
+        ></button>
+        <button
+          pButton
+          type="button"
+          label="Sign Up"
+          icon="pi pi-user-plus"
+          class="p-button-success p-button-rounded"
+          style="width: 10rem"
+        ></button>
+      </div>
+    </p-toolbar>
+
+    <div
+      class="flex flex-wrap align-items-center justify-content-center card-container"
+    >
+      <div
+        class="gradient-1 surface-overlay border-round border-1 p-3 m-3 w-16rem min-h-full"
+      >
+        <a href="#" class="gradient-1 no-underline hover:underline">
+          Did you forget your password?
+        </a>
+      </div>
+    </div>
+    <div class="flex justify-content-center flex-wrap">
+      <div
+        class="gradient-1 flex align-items-center justify-content-center w-2rem h-2rem bg-primary font-bold border-round m-2"
+      >
+        <i class="pi pi-instagram"></i>
+      </div>
+      <div
+        class="flex align-items-center justify-content-center w-2rem h-2rem bg-primary font-bold border-round m-2"
+      >
+        <i class="pi pi-facebook"></i>
+      </div>
     </div>
   </form>
-</div>
-<div class="flex justify-content-center flex-wrap">
-  <div
-    class="gradient-1 flex align-items-center justify-content-center w-2rem h-2rem bg-primary font-bold border-round m-2"
-  >
-    <i class="pi pi-instagram"></i>
-  </div>
-  <div
-    class="flex align-items-center justify-content-center w-2rem h-2rem bg-primary font-bold border-round m-2"
-  >
-    <i class="pi pi-facebook"></i>
-  </div>
 </div>

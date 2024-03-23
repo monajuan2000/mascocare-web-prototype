@@ -4,7 +4,7 @@
 // styles.sass
 $logotype-1: rgb(232, 87, 99)
 $logotype-2: rgb(34, 41, 89)
-$input-autofill: rgb(62, 163, 190)
+$input-autofill-blue-900: #183462
 $gradient: linear-gradient(to right, $logotype-1, $logotype-2)
 $overall-white: rgb(255, 255, 255)
 $transparent: rgba(128, 128, 128, 0.4)
@@ -19,8 +19,13 @@ $height-100: 100%
 @mixin white-gradient($param1, $param2)
     background-image: linear-gradient(to right, $param1, $param2)
     color: $overall-white
-@mixin font-style()
+@mixin pacifico-font-style()
     font-family: 'Pacifico', cursive !important
+    color: $overall-white
+    font-style: normal
+    font-size: 20px
+@mixin roboto-font-style()
+    font-family: 'Roboto', sans-serif !important
     color: $overall-white
     font-style: normal
     font-size: 20px
@@ -28,6 +33,7 @@ $height-100: 100%
 @mixin overall-input()
     width: 600px !important
     background-color: $transparent-2 !important
+    color: $overall-white !important
 
 // Mixin for horizontal alignment
 @mixin align-horizontally($justify-content)
@@ -46,23 +52,29 @@ $height-100: 100%
     justify-content: $justify-content-center
 
 .security-component
-    div, input
-        @include font-style()
+    div
+        @include pacifico-font-style()
         @include align-completely()
     .p-button
         @include white-gradient($logotype-1, $logotype-2)
-        @include font-style()
+        @include pacifico-font-style()
+        border: none
+        margin: 2px
+    .p-toolbar
+        background-color: transparent !important
+        border: none
 
 html
     height: 100%
     background-image: url('assets/images/LOGGING_IMAGE.png')
     background-size: 100% 100%
-    @include font-style()
+    @include pacifico-font-style()
     @include align-completely()
 
 .color-white
     color: $overall-white !important
 .gradient-1
     background-image: linear-gradient(to right, $logotype-1, $logotype-2)
+    color: $overall-white !important
 .background-transparent
     background-color: $transparent

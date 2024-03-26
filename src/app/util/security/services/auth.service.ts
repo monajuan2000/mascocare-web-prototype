@@ -1,7 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
-import { BaseRequest } from '../../request/base-response.model';
+import {
+  AuthenticationRequest,
+  BaseRequest,
+} from '../../request/base-request.model';
 
 @Injectable({
   providedIn: 'root',
@@ -11,9 +14,15 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-  basicLogin(username: string, password: string): Observable<BaseRequest> {
+  basicLogin(
+    authenticationRequest: AuthenticationRequest
+  ): Observable<BaseRequest> {
     const headers = new HttpHeaders({
-      Authorization: 'Basic ' + btoa(username + ':' + password),
+      Authorization:
+        'Basic ' +
+        btoa(
+          authenticationRequest.username + ':' + authenticationRequest.password
+        ),
     });
 
     return this.http.get<BaseRequest>(this.apiUrl, { headers }).pipe(

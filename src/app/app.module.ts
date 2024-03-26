@@ -18,6 +18,7 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { AvatarModule } from 'primeng/avatar';
 import { MainToolbarComponent } from './util/home/main-toolbar/main-toolbar.component';
 import { LoggingFormComponent } from './util/security/logging/logging-form/logging-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { LoggingFormComponent } from './util/security/logging/logging-form/loggi
     HomeRoutingModule,
     ToolbarModule,
     AvatarModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

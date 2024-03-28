@@ -19,6 +19,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { MainToolbarComponent } from './util/home/main-toolbar/main-toolbar.component';
 import { LoggingFormComponent } from './util/security/logging/logging-form/logging-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     ToolbarModule,
     AvatarModule,
     ReactiveFormsModule,
+    LoggerModule.forRoot({
+      // serverLoggingUrl: 'any-url in api',
+      // serverLogLevel: NgxLoggerLevel.ERROR,
+      level: NgxLoggerLevel.TRACE,
+      disableConsoleLogging: false,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

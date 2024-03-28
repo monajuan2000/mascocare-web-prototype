@@ -20,6 +20,10 @@ import { MainToolbarComponent } from './util/home/main-toolbar/main-toolbar.comp
 import { LoggingFormComponent } from './util/security/logging/logging-form/logging-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
+import { DialogModule } from 'primeng/dialog';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OverallDialogComponent } from './util/components/overall-dialog/overall-dialog.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +33,7 @@ import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
     HomeComponent,
     MainToolbarComponent,
     LoggingFormComponent,
+    OverallDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +49,9 @@ import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
     ToolbarModule,
     AvatarModule,
     ReactiveFormsModule,
+    DialogModule,
+    ProgressSpinnerModule,
+    BrowserAnimationsModule,
     LoggerModule.forRoot({
       // serverLoggingUrl: 'any-url in api',
       // serverLogLevel: NgxLoggerLevel.ERROR,

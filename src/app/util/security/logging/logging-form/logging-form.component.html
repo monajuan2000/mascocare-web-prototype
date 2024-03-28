@@ -1,6 +1,6 @@
 <div id="security-main-title" class="field col-12 md:col-12">Welcome !</div>
 <div id="logging-form-container" class="security-component">
-  <form #miFormulario="ngForm">
+  <form [formGroup]="logginForm" (ngSubmit)="onSubmit()">
     <div class="field col-12 md:col-12">
       <span class="p-input-icon-right">
         <i class="pi pi-user color-white"></i>
@@ -8,14 +8,11 @@
           type="text"
           id="username"
           name="username"
-          ngModel
-          required
           pInputText
-          placeholder="Username"
-          required
           placeholder="Username"
           class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
           aria-describedby="password-help"
+          formControlName="username"
         />
       </span>
     </div>
@@ -26,17 +23,15 @@
           type="password"
           id="password"
           name="password"
-          ngModel
-          required
           pInputText
-          placeholder="Password"
-          required
           placeholder="Password"
           class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
           aria-describedby="password-help"
+          formControlName="password"
         />
       </span>
     </div>
+    <br />
 
     <p-toolbar>
       <div class="p-toolbar-group-left">
@@ -47,6 +42,7 @@
           icon="pi pi-user"
           class="p-button-rounded"
           style="width: 10rem"
+          [disabled]="logginForm.invalid"
         ></button>
         <button
           pButton

@@ -6,6 +6,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Password } from 'primeng/password';
 import { AuthenticationRequest } from '../../../request/base-request.model';
 import { NGXLogger } from 'ngx-logger';
+import { ErrorHandlingService } from 'src/app/util/services/error-handling.service';
 
 @Component({
   selector: 'app-logging-form',
@@ -14,29 +15,29 @@ import { NGXLogger } from 'ngx-logger';
 })
 export class LoggingFormComponent {
   redirectUrl: string | undefined;
-  myForm: FormGroup;
+  logginForm: FormGroup;
 
   constructor(
+    private errorService: ErrorHandlingService,
     private authService: AuthService,
     private router: Router,
     private formBuilder: FormBuilder,
     private logger: NGXLogger
   ) {
-    this.myForm = this.formBuilder.group({
+    this.logginForm = this.formBuilder.group({
       username: ['', [Validators.required, Validators.minLength(5)]],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(5)]],
     });
   }
 
   ngOnInit(): void {
-    //this.logTest();
+    this.logger.log('Welcome to Mascocare Application');
   }
 
-  private onSubmit = (): void => {
-    if (this.myForm.valid) {
-      // Realizar acciones si el formulario es válido
-    }
+  protected onSubmit = (): void => {
+    if (this.logginForm.valid) this.sendLoggingForm(this.logginForm.value);
+    else this.invalidForm();
+    this.logginForm.reset();
   };
 
   private sendLoggingForm = (
@@ -47,10 +48,9 @@ export class LoggingFormComponent {
         this.successProcess(request);
       },
       error: (error) => {
-        this.errorProcess(error);
+        this.errorService.overallError(error);
       },
     });
-    //miFormulario.resetForm();
   };
 
   private successProcess = (request: BaseRequest): void => {
@@ -59,7 +59,7 @@ export class LoggingFormComponent {
     this.redirectUser(request);
   };
 
-  private redirectUser = (request: BaseRequest) => {
+  private redirectUser = (request: BaseRequest): void => {
     this.redirectUrl = request.redirectUrl;
     if (typeof this.redirectUrl === 'string') {
       this.router.navigateByUrl(this.redirectUrl);
@@ -71,29 +71,7 @@ export class LoggingFormComponent {
     }
   };
 
-  private errorProcess = (error: any): never => {
-    throw new Error(error);
-  };
-
-  private logTest = (/*request: BaseRequest*/): void => {
-    this.logger.debug('Debug message');
-    this.logger.info('Info message');
-    this.logger.log('Default log message');
-    this.logger.warn('Warning message');
-    this.logger.error('Error message');
-  };
-
-  // onSubmit(miFormulario: any) {
-  //   const { username, password } = miFormulario.value;
-  //   console.log(miFormulario.value);
-  //   this.authService.basicLogin(username, password).subscribe({
-  //     next: (request) => {
-  //       this.successProcess(request);
-  //     },
-  //     error: (error) => {
-  //       this.errorProcess(error);
-  //     },
-  //   });
-
-  // }
+  private invalidForm(): void {
+    this.logger.warn('Form invalid please try again');
+  }
 }

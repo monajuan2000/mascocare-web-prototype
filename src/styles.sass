@@ -64,12 +64,16 @@ $height-100: 100%
         background-color: transparent !important
         border: none
 
-html
+.home-component
+    .p-avatar.p-avatar-circle
+        overflow: visible
+
+html,body
     height: 100%
-    background-image: url('assets/images/LOGGING_IMAGE.png')
+    margin: 0
+    background-image: url('assets/images/MASCOCARE_PAGE_MAIN_IMAGE.png')
     background-size: 100% 100%
     @include pacifico-font-style()
-    @include align-completely()
 
 .color-white
     color: $overall-white !important

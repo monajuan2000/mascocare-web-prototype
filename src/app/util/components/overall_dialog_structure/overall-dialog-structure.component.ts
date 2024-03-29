@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./overall-dialog-structure.component.sass'],
 })
 export class OverallDialogStructureComponent {
-  styleType: string = 'error-dialog';
+  styleType: string = 'overall-dialog';
 
   constructor() {}
 }

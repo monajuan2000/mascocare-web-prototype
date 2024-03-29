@@ -16,7 +16,7 @@ import { HomeComponent } from './util/home/home.component';
 import { HomeRoutingModule } from './util/home/home-routing.module';
 import { ToolbarModule } from 'primeng/toolbar';
 import { AvatarModule } from 'primeng/avatar';
-import { MainToolbarComponent } from './util/home/main-toolbar/main-toolbar.component';
+import { MainToolbarComponent } from './util/home/main_toolbar/main-toolbar.component';
 import { LoggingFormComponent } from './util/security/logging/logging_form/logging-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';

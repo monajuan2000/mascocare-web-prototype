@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoggingComponent } from './util/security/logging/logging.component';
 import { OwnerRoutingModule } from './util/owners/owner-routing.module';
-import { OwnersListComponent } from './util/owners/owners-list/owners-list.component';
+import { OwnersListComponent } from './util/owners/owners_list/owners-list.component';
 import { HomeComponent } from './util/home/home.component';
 
 const routes: Routes = [

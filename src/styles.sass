@@ -4,8 +4,10 @@
 // styles.sass
 $logotype-1: rgb(232, 87, 99)
 $logotype-2: rgb(34, 41, 89)
+$logotype-3: rgba(232, 87, 99,0.4)
 $input-autofill-blue-900: #183462
-$gradient: linear-gradient(to right, $logotype-1, $logotype-2)
+$gradient-1: linear-gradient(to right, $logotype-1, $logotype-2)
+$gradient-2: linear-gradient(to right, $logotype-1, $logotype-3)
 $overall-white: rgb(255, 255, 255)
 $transparent: rgba(128, 128, 128, 0.4)
 $transparent-2: rgba(128, 128, 128, 0.2)
@@ -53,10 +55,9 @@ $font-size-40px: 40px
     align-items: $align-items-center
     justify-content: $justify-content-center
 
-.logging-form-component
-    .p-button
-        @include pacifico-font-style()
-        border: none
+@mixin background-main-image()
+    background-image: url('assets/images/MASCOCARE_PAGE_MAIN_IMAGE.png')
+    background-size: 100% 100%
 
 .home-component
     .p-avatar.p-avatar-circle
@@ -65,14 +66,12 @@ $font-size-40px: 40px
 html,body
     height: 100%
     margin: 0
-    background-image: url('assets/images/MASCOCARE_PAGE_MAIN_IMAGE.png')
-    background-size: 100% 100%
+    @include background-main-image
     @include pacifico-font-style()
 
 .color-white
     color: $overall-white !important
 .gradient-1
     background-image: linear-gradient(to right, $logotype-1, $logotype-2)
-    color: $overall-white !important
 .background-transparent
     background-color: $transparent

@@ -6,7 +6,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Password } from 'primeng/password';
 import { AuthenticationRequest } from '../../../request/base-request.model';
 import { NGXLogger } from 'ngx-logger';
-import { ErrorHandlingService } from 'src/app/util/services/error-handling.service';
+import { ErrorHandlingService } from 'src/app/util/services/Error/error-handling.service';
+import { OverallDialogService } from 'src/app/util/services/dialog/overall-dialog.service';
 
 @Component({
   selector: 'app-logging-form',
@@ -20,6 +21,7 @@ export class LoggingFormComponent {
   constructor(
     private errorService: ErrorHandlingService,
     private authService: AuthService,
+    private dialogService: OverallDialogService,
     private router: Router,
     private formBuilder: FormBuilder,
     private logger: NGXLogger
@@ -36,9 +38,7 @@ export class LoggingFormComponent {
 
   protected saveForm = (): void => {
     console.log(this.logginForm.value);
-    if (this.logginForm.valid) {
-      this.sendLoggingForm(this.logginForm.value);
-    } else this.invalidForm();
+    if (this.logginForm.valid) this.sendLoggingForm(this.logginForm.value);
     this.logginForm.reset();
   };
 
@@ -50,6 +50,9 @@ export class LoggingFormComponent {
         this.successProcess(request);
       },
       error: (error) => {
+        this.logger.warn('Form invalid please try again');
+        this.logger.debug('Form invalid please try again');
+        this.dialogService.setDisplayModalState(true);
         this.errorService.overallError(error);
       },
     });
@@ -72,8 +75,4 @@ export class LoggingFormComponent {
       this.logger.debug('Error: URL of redirect no valid ' + this.redirectUrl);
     }
   };
-
-  private invalidForm(): void {
-    this.logger.warn('Form invalid please try again');
-  }
 }

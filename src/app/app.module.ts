@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LoggingComponent } from './util/security/logging/logging.component';
 import { SecurityRoutingModule } from './util/security/security-routing.module';
 import { OwnerRoutingModule } from './util/owners/owner-routing.module';
-import { OwnersListComponent } from './util/owners/owners-list/owners-list.component';
+import { OwnersListComponent } from './util/owners/owners_list/owners-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
@@ -17,14 +17,14 @@ import { HomeRoutingModule } from './util/home/home-routing.module';
 import { ToolbarModule } from 'primeng/toolbar';
 import { AvatarModule } from 'primeng/avatar';
 import { MainToolbarComponent } from './util/home/main-toolbar/main-toolbar.component';
-import { LoggingFormComponent } from './util/security/logging/logging-form/logging-form.component';
+import { LoggingFormComponent } from './util/security/logging/logging_form/logging-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import { DialogModule } from 'primeng/dialog';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { OverallDialogComponent } from './util/components/overall-dialog/overall-dialog.component';
-import { MainButtonComponent } from './util/components/main-button/main-button.component';
+import { OverallDialogComponent } from './util/components/overall_dialog/overall-dialog.component';
+import { MainButtonComponent } from './util/components/main_button/main-button.component';
 import { LinksLoginComponent } from './util/security/logging/components/links-login/links-login.component';
 
 @NgModule({

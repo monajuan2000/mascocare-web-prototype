@@ -24,6 +24,8 @@ import { DialogModule } from 'primeng/dialog';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OverallDialogComponent } from './util/components/overall-dialog/overall-dialog.component';
+import { MainButtonComponent } from './util/components/main-button/main-button.component';
+import { LinksLoginComponent } from './util/security/logging/components/links-login/links-login.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { OverallDialogComponent } from './util/components/overall-dialog/overall
     MainToolbarComponent,
     LoggingFormComponent,
     OverallDialogComponent,
+    MainButtonComponent,
+    LinksLoginComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,82 +1,43 @@
-<div id="security-main-title" class="field col-12 md:col-12">Welcome !</div>
-<div id="logging-form-container" class="security-component">
-  <form [formGroup]="logginForm" (ngSubmit)="onSubmit()">
-    <div class="field col-12 md:col-12">
-      <span class="p-input-icon-right">
-        <i class="pi pi-user color-white"></i>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          pInputText
-          placeholder="Username"
-          class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-          aria-describedby="password-help"
-          formControlName="username"
-        />
-      </span>
-    </div>
-    <div class="field col-12 md:col-12">
-      <span class="p-input-icon-right">
-        <i class="pi pi-spin pi-cog color-white"></i>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          pInputText
-          placeholder="Password"
-          class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-          aria-describedby="password-help"
-          formControlName="password"
-        />
-      </span>
-    </div>
-    <br />
+<div id="security-main-title">Welcome to Mascocare</div>
+<form
+  [formGroup]="logginForm"
+  (ngSubmit)="saveForm()"
+  class="logging-form-component"
+>
+  <div class="flex justify-content-center flex-wrap">
+    <input
+      type="text"
+      class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full m-2"
+      placeholder="Username"
+      formControlName="username"
+    />
+    <input
+      type="password"
+      class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full m-2"
+      placeholder="Password"
+      formControlName="password"
+    />
+  </div>
 
-    <p-toolbar>
-      <div class="p-toolbar-group-left">
-        <button
-          pButton
-          type="submit"
-          label="Login"
-          icon="pi pi-user"
-          class="p-button-rounded"
-          style="width: 10rem"
-          [disabled]="logginForm.invalid"
-        ></button>
-        <button
-          pButton
-          type="button"
-          label="Sign Up"
-          icon="pi pi-user-plus"
-          class="p-button-success p-button-rounded"
-          style="width: 10rem"
-        ></button>
-      </div>
-    </p-toolbar>
-
-    <div
-      class="flex flex-wrap align-items-center justify-content-center card-container"
-    >
-      <div
-        class="gradient-1 surface-overlay border-round border-1 p-3 m-3 w-16rem min-h-full"
-      >
-        <a href="#" class="gradient-1 no-underline hover:underline">
-          Did you forget your password?
-        </a>
-      </div>
+  <div class="flex justify-content-center flex-wrap">
+    <div class="flex align-items-center justify-content-center m-2">
+      <app-main-button
+        [label]="'Send'"
+        [type]="'submit'"
+        [icon]="'pi pi-user'"
+        [invalid]="logginForm.invalid"
+        classes="gradient-1 p-button-rounded"
+      ></app-main-button>
     </div>
-    <div class="flex justify-content-center flex-wrap">
-      <div
-        class="gradient-1 flex align-items-center justify-content-center w-2rem h-2rem bg-primary font-bold border-round m-2"
-      >
-        <i class="pi pi-instagram"></i>
-      </div>
-      <div
-        class="flex align-items-center justify-content-center w-2rem h-2rem bg-primary font-bold border-round m-2"
-      >
-        <i class="pi pi-facebook"></i>
-      </div>
+    <div class="flex align-items-center justify-content-center m-2">
+      <app-main-button
+        [label]="'Sign Up'"
+        [type]="'button'"
+        [icon]="'pi pi-user-plus'"
+        [invalid]="false"
+        classes="gradient-1 p-button-rounded"
+      ></app-main-button>
     </div>
-  </form>
-</div>
+  </div>
+</form>
+<app-links-login></app-links-login>

@@ -15,6 +15,8 @@ $align-items-center: center
 $display-flex: flex
 //Heigts
 $height-100: 100%
+//font-size
+$font-size-40px: 40px
 
 @mixin white-gradient($param1, $param2)
     background-image: linear-gradient(to right, $param1, $param2)
@@ -29,11 +31,11 @@ $height-100: 100%
     color: $overall-white
     font-style: normal
     font-size: 20px
+    color: $overall-white !important
 
 @mixin overall-input()
     width: 600px !important
     background-color: $transparent-2 !important
-    color: $overall-white !important
 
 // Mixin for horizontal alignment
 @mixin align-horizontally($justify-content)
@@ -51,17 +53,9 @@ $height-100: 100%
     align-items: $align-items-center
     justify-content: $justify-content-center
 
-.security-component
-    div
-        @include pacifico-font-style()
-        @include align-completely()
+.logging-form-component
     .p-button
-        @include white-gradient($logotype-1, $logotype-2)
         @include pacifico-font-style()
-        border: none
-        margin: 2px
-    .p-toolbar
-        background-color: transparent !important
         border: none
 
 .home-component

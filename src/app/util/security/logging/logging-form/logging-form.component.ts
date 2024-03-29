@@ -34,9 +34,11 @@ export class LoggingFormComponent {
     this.logger.log('Welcome to Mascocare Application');
   }
 
-  protected onSubmit = (): void => {
-    if (this.logginForm.valid) this.sendLoggingForm(this.logginForm.value);
-    else this.invalidForm();
+  protected saveForm = (): void => {
+    console.log(this.logginForm.value);
+    if (this.logginForm.valid) {
+      this.sendLoggingForm(this.logginForm.value);
+    } else this.invalidForm();
     this.logginForm.reset();
   };
 

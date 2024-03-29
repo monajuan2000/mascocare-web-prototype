@@ -21,7 +21,6 @@ import { LoggingFormComponent } from './util/security/logging/logging-form/loggi
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import { MainButtonComponent } from './util/components/main-button/main-button.component';
-import { MainInputComponent } from './util/components/main-input/main-input.component';
 import { LinksLoginComponent } from './util/security/logging/components/links-login/links-login.component';
 
 @NgModule({
@@ -33,7 +32,6 @@ import { LinksLoginComponent } from './util/security/logging/components/links-lo
     MainToolbarComponent,
     LoggingFormComponent,
     MainButtonComponent,
-    MainInputComponent,
     LinksLoginComponent,
   ],
   imports: [

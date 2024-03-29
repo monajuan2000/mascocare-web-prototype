@@ -16,7 +16,6 @@ import { ErrorHandlingService } from 'src/app/util/services/error-handling.servi
 export class LoggingFormComponent {
   redirectUrl: string | undefined;
   logginForm: FormGroup;
-  test = true;
 
   constructor(
     private errorService: ErrorHandlingService,
@@ -36,8 +35,10 @@ export class LoggingFormComponent {
   }
 
   protected saveForm = (): void => {
-    if (this.logginForm.valid) this.sendLoggingForm(this.logginForm.value);
-    else this.invalidForm();
+    console.log(this.logginForm.value);
+    if (this.logginForm.valid) {
+      this.sendLoggingForm(this.logginForm.value);
+    } else this.invalidForm();
     this.logginForm.reset();
   };
 

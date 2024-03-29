@@ -53,18 +53,10 @@ $font-size-40px: 40px
     align-items: $align-items-center
     justify-content: $justify-content-center
 
-// .security-component
-//     div
-//         @include pacifico-font-style()
-//         @include align-completely()
-//     .p-button
-//         @include white-gradient($logotype-1, $logotype-2)
-//         @include pacifico-font-style()
-//         border: none
-//         margin: 2px
-//     .p-toolbar
-//         background-color: transparent !important
-//         border: none
+.logging-form-component
+    .p-button
+        @include pacifico-font-style()
+        border: none
 
 .home-component
     .p-avatar.p-avatar-circle
@@ -75,7 +67,7 @@ html,body
     margin: 0
     background-image: url('assets/images/MASCOCARE_PAGE_MAIN_IMAGE.png')
     background-size: 100% 100%
-    @include roboto-font-style()
+    @include pacifico-font-style()
 
 .color-white
     color: $overall-white !important

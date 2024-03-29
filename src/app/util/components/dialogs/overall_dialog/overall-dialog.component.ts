@@ -1,5 +1,5 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { OverallDialogService } from '../../services/dialog/overall-dialog.service';
+import { OverallDialogService } from '../../../services/dialog/overall-dialog.service';
 
 @Component({
   selector: 'app-overall-dialog',

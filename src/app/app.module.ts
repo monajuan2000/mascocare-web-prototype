@@ -23,9 +23,12 @@ import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import { DialogModule } from 'primeng/dialog';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { OverallDialogComponent } from './util/components/overall_dialog/overall-dialog.component';
 import { MainButtonComponent } from './util/components/main_button/main-button.component';
 import { LinksLoginComponent } from './util/security/logging/components/links-login/links-login.component';
+import { OverallDialogComponent } from './util/components/dialogs/overall_dialog/overall-dialog.component';
+import { OverallDialogStructureComponent } from './util/components/overall_dialog_structure/overall-dialog-structure.component';
+import { ErrorDialogComponent } from './util/components/dialogs/error_dialog/error-dialog.component';
+import { WarningDialogComponent } from './util/components/dialogs/warning_dialog/warning-dialog.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,9 @@ import { LinksLoginComponent } from './util/security/logging/components/links-lo
     OverallDialogComponent,
     MainButtonComponent,
     LinksLoginComponent,
+    OverallDialogStructureComponent,
+    ErrorDialogComponent,
+    WarningDialogComponent,
   ],
   imports: [
     BrowserModule,

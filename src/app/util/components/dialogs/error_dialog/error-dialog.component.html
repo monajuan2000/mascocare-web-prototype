@@ -1,0 +1,22 @@
+<p-dialog
+  [header]="header"
+  [visible]="true"
+  [modal]="true"
+  [closable]="false"
+  [responsive]="true"
+>
+  <ng-template pTemplate="content">
+    <div class="flex flex-column align-items-center">
+      <p>{{ message }}</p>
+      <i class="pi pi-exclamation-triangle"></i>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <app-main-button
+      [label]="'Close'"
+      [type]="'button'"
+      [icon]="'pi pi-times'"
+      [classes]="'error-gradient-button p-button-rounded'"
+    ></app-main-button>
+  </ng-template>
+</p-dialog>

@@ -1,0 +1,12 @@
+@import 'src/styles.sass'
+
+::ng-deep .p-dialog-content,
+::ng-deep .p-dialog-draggable .p-dialog-header,
+::ng-deep .p-dialog .p-dialog-footer
+    @include align-horizontally(center)
+    background: $error-red
+    color: $overall-white
+i
+    font-size: 4rem
+::ng-deep .error-gradient-button
+    background: rgba(255, 0, 0, 0.2)

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-overall-dialog-structure',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./overall-dialog-structure.component.sass'],
 })
 export class OverallDialogStructureComponent {
-  protected styleType = 'warning';
+  styleType: string = 'error-dialog';
+
+  constructor() {}
 }

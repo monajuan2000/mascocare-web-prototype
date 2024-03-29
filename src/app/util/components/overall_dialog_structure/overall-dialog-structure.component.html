@@ -1,12 +1,15 @@
-<div *ngIf="styleType === 'error'" class="error-styling">
-  <app-overall-dialog></app-overall-dialog>
-</div>
-<div *ngIf="styleType === 'warning'" class="warning-styling">
-  <app-overall-dialog></app-overall-dialog>
-</div>
-<div
-  *ngIf="styleType !== 'error' && styleType !== 'warning'"
-  class="dialog-overall-styling"
->
-  <app-overall-dialog></app-overall-dialog>
-</div>
+<app-overall-dialog
+  [message]="'This is an overral message'"
+  [header]="'Loading...'"
+  *ngIf="styleType === 'overall-dialog'"
+></app-overall-dialog>
+<app-error-dialog
+  [message]="'This is an error message'"
+  [header]="'ERROR'"
+  *ngIf="styleType === 'error-dialog'"
+></app-error-dialog>
+<app-warning-dialog
+  [message]="'This is an warning message'"
+  [header]="'WARNING'"
+  *ngIf="styleType === 'warning-dialog'"
+></app-warning-dialog>

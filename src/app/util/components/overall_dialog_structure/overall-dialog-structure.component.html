@@ -1,0 +1,12 @@
+<div *ngIf="styleType === 'error'" class="error-styling">
+  <app-overall-dialog></app-overall-dialog>
+</div>
+<div *ngIf="styleType === 'warning'" class="warning-styling">
+  <app-overall-dialog></app-overall-dialog>
+</div>
+<div
+  *ngIf="styleType !== 'error' && styleType !== 'warning'"
+  class="dialog-overall-styling"
+>
+  <app-overall-dialog></app-overall-dialog>
+</div>

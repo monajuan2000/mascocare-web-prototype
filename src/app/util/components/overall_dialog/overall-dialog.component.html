@@ -1,0 +1,28 @@
+<p-dialog
+  [header]="header"
+  [visible]="getDisplayModalState"
+  [modal]="getDisplayModalState"
+  [closable]="false"
+  [responsive]="true"
+>
+  <ng-template pTemplate="content">
+    <div class="flex flex-column align-items-center">
+      <p>{{ message }}</p>
+      <p-progressSpinner
+        styleClass="w-4rem h-4rem"
+        strokeWidth="8"
+        fill="var(--surface-ground)"
+        animationDuration=".5s"
+      ></p-progressSpinner>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <app-main-button
+      [label]="'Close'"
+      [type]="'button'"
+      [icon]="'pi pi-times'"
+      [classes]="'gradient-1 p-button-rounded'"
+      (click)="setDisplayModalState()"
+    ></app-main-button>
+  </ng-template>
+</p-dialog>

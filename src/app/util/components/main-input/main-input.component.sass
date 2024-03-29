@@ -1,0 +1,14 @@
+@import 'src/styles.sass'
+
+input::placeholder
+    color: $overall-white
+    @include roboto-font-style()
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active
+    -webkit-box-shadow: 0 0 0 30px $input-autofill-blue-900 inset !important
+    -webkit-text-fill-color: $overall-white
+.input
+    @include overall-input()
+    @include roboto-font-style()

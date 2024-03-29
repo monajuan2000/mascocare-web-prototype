@@ -20,6 +20,9 @@ import { MainToolbarComponent } from './util/home/main-toolbar/main-toolbar.comp
 import { LoggingFormComponent } from './util/security/logging/logging-form/logging-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
+import { MainButtonComponent } from './util/components/main-button/main-button.component';
+import { MainInputComponent } from './util/components/main-input/main-input.component';
+import { LinksLoginComponent } from './util/security/logging/components/links-login/links-login.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,9 @@ import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
     HomeComponent,
     MainToolbarComponent,
     LoggingFormComponent,
+    MainButtonComponent,
+    MainInputComponent,
+    LinksLoginComponent,
   ],
   imports: [
     BrowserModule,

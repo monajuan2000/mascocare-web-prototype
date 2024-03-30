@@ -10,6 +10,8 @@ import {
   BaseRequest,
 } from '../request/base-request.model';
 import { anotherConstants } from '../constants/another-constants';
+import { catchError, of } from 'rxjs';
+import { HttpErrorRequest } from '../Errors/http-error-request';
 
 export class FormLogic {
   constructor(
@@ -35,14 +37,21 @@ export class FormLogic {
   }
 
   sendForm(authenticationRequest: AuthenticationRequest): void {
-    this.authService.basicLogin(authenticationRequest).subscribe({
-      next: (request) => {
-        this.successProcess(request);
-      },
-      error: (error) => {
-        this.handleFormError(error);
-      },
-    });
+    this.authService
+      .basicLogin(authenticationRequest)
+      .pipe(
+        catchError((error: HttpErrorRequest) => {
+          this.handleFormError(error);
+          return of(null);
+        })
+      )
+      .subscribe({
+        next: (request) => {
+          if (request !== null) {
+            this.successProcess(request);
+          }
+        },
+      });
   }
 
   private successProcess(request: BaseRequest): void {
@@ -62,10 +71,13 @@ export class FormLogic {
     }
   }
 
-  private handleFormError(error: any): void {
+  private handleFormError(error: HttpErrorRequest): void {
     this.logger.warn(stringConstants.INVALID_FORM);
     this.logger.debug(stringConstants.INVALID_FORM);
-    this.dialogService.setDialogStyleTyle(stringConstants.DIALOG_STYLE_ERROR);
+    this.dialogService.setErrorRequest(error);
+    this.dialogService.setDialogStyleAndType(
+      stringConstants.DIALOG_STYLE_ERROR
+    );
     this.dialogService.setDisplayModalState(anotherConstants.TRUE);
     this.errorService.overallError(error);
   }

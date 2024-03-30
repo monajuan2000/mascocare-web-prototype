@@ -4,7 +4,7 @@
   *ngIf="getDialogService === 'overall-dialog'"
 ></app-overall-dialog>
 <app-error-dialog
-  [message]="'This is an error message'"
+  [message]="getErrorRequest.message"
   [header]="'ERROR'"
   *ngIf="getDialogService === 'error-dialog'"
 ></app-error-dialog>

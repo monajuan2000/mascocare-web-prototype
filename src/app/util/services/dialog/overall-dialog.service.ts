@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpErrorRequest } from '../../Errors/http-error-request';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -10,6 +12,7 @@ export class OverallDialogService {
   public displayModalState$: Observable<boolean> =
     this.displayModalStateSubject.asObservable();
   private styleType: string = 'overall-dialog';
+  private errorRequest!: HttpErrorRequest;
 
   constructor() {}
 
@@ -21,11 +24,19 @@ export class OverallDialogService {
     return this.styleType;
   }
 
-  public setDialogStyleTyle = (styleType: string) => {
+  public get getErrorRequest(): HttpErrorRequest {
+    return this.errorRequest;
+  }
+
+  public setDialogStyleAndType = (styleType: string) => {
     this.styleType = styleType;
   };
 
-  public setDisplayModalState(showModal: boolean): void {
+  public setDisplayModalState = (showModal: boolean): void => {
     this.displayModalStateSubject.next(showModal);
-  }
+  };
+
+  public setErrorRequest = (httpErrorRequest: HttpErrorRequest): void => {
+    this.errorRequest = httpErrorRequest;
+  };
 }

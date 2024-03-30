@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { OverallDialogService } from '../../services/dialog/overall-dialog.service';
+import { HttpErrorRequest } from '../../Errors/http-error-request';
 
 @Component({
   selector: 'app-overall-dialog-structure',
@@ -11,5 +12,9 @@ export class OverallDialogStructureComponent {
 
   protected get getDialogService(): string {
     return this.dialogService.getDialogStyleTyle;
+  }
+
+  protected get getErrorRequest(): HttpErrorRequest {
+    return this.dialogService.getErrorRequest;
   }
 }

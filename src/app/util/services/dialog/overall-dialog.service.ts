@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { HttpErrorRequest } from '../../Errors/http-error-request';
+import { HttpErrorRequest } from '../../errors/http-error-request';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({

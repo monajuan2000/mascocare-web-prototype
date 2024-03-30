@@ -29,6 +29,7 @@ import { OverallDialogComponent } from './util/components/dialogs/overall_dialog
 import { OverallDialogStructureComponent } from './util/components/overall_dialog_structure/overall-dialog-structure.component';
 import { ErrorDialogComponent } from './util/components/dialogs/error_dialog/error-dialog.component';
 import { WarningDialogComponent } from './util/components/dialogs/warning_dialog/warning-dialog.component';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { WarningDialogComponent } from './util/components/dialogs/warning_dialog
     DialogModule,
     ProgressSpinnerModule,
     BrowserAnimationsModule,
+    TableModule,
     LoggerModule.forRoot({
       // serverLoggingUrl: 'any-url in api',
       // serverLogLevel: NgxLoggerLevel.ERROR,

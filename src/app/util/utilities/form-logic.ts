@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { AuthService } from '../security/services/auth.service';
-import { ErrorHandlingService } from '../Errors/error-handling.service';
+import { ErrorHandlingService } from '../errors/error-handling.service';
 import { OverallDialogService } from '../services/dialog/overall-dialog.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NGXLogger } from 'ngx-logger';
@@ -11,7 +11,7 @@ import {
 } from '../request/base-request.model';
 import { anotherConstants } from '../constants/another-constants';
 import { catchError, of } from 'rxjs';
-import { HttpErrorRequest } from '../Errors/http-error-request';
+import { HttpErrorRequest } from '../errors/http-error-request';
 
 export class FormLogic {
   constructor(

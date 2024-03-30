@@ -1,15 +1,15 @@
 <app-overall-dialog
   [message]="'This is an overral message'"
   [header]="'Loading...'"
-  *ngIf="styleType === 'overall-dialog'"
+  *ngIf="getDialogService === 'overall-dialog'"
 ></app-overall-dialog>
 <app-error-dialog
   [message]="'This is an error message'"
   [header]="'ERROR'"
-  *ngIf="styleType === 'error-dialog'"
+  *ngIf="getDialogService === 'error-dialog'"
 ></app-error-dialog>
 <app-warning-dialog
   [message]="'This is an warning message'"
   [header]="'WARNING'"
-  *ngIf="styleType === 'warning-dialog'"
+  *ngIf="getDialogService === 'warning-dialog'"
 ></app-warning-dialog>

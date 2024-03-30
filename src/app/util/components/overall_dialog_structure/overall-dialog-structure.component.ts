@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { OverallDialogService } from '../../services/dialog/overall-dialog.service';
 
 @Component({
   selector: 'app-overall-dialog-structure',
@@ -6,7 +7,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./overall-dialog-structure.component.sass'],
 })
 export class OverallDialogStructureComponent {
-  styleType: string = 'overall-dialog';
+  constructor(private dialogService: OverallDialogService) {}
 
-  constructor() {}
+  protected get getDialogService(): string {
+    return this.dialogService.getDialogStyleTyle;
+  }
 }

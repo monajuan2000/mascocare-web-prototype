@@ -1,7 +1,7 @@
 <p-dialog
   [header]="header"
-  [visible]="true"
-  [modal]="true"
+  [visible]="getDisplayModalState"
+  [modal]="getDisplayModalState"
   [closable]="false"
   [responsive]="true"
 >
@@ -17,6 +17,7 @@
       [type]="'button'"
       [icon]="'pi pi-times'"
       [classes]="'error-gradient-button p-button-rounded'"
+      (click)="setDisplayModalState()"
     ></app-main-button>
   </ng-template>
 </p-dialog>

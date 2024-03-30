@@ -52,6 +52,7 @@ export class LoggingFormComponent {
       error: (error) => {
         this.logger.warn('Form invalid please try again');
         this.logger.debug('Form invalid please try again');
+        this.dialogService.setDialogStyleTyle('error-dialog');
         this.dialogService.setDisplayModalState(true);
         this.errorService.overallError(error);
       },

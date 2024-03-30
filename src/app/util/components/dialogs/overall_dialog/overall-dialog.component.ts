@@ -12,6 +12,7 @@ export class OverallDialogComponent {
   header!: string;
   @Input()
   message!: string;
+
   private displayModal: boolean = false;
   constructor(private dialogService: OverallDialogService) {
     this.dialogService.displayModalState$.subscribe((value) => {

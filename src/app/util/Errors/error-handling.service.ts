@@ -7,7 +7,5 @@ import { HttpErrorRequest } from './http-error-request';
 export class ErrorHandlingService {
   constructor() {}
 
-  public overallError = (error: HttpErrorRequest) => {
-    //throw new Error(error);
-  };
+  public overallError = (error: HttpErrorRequest) => {};
 }

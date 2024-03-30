@@ -79,6 +79,6 @@ export class FormLogic {
       stringConstants.DIALOG_STYLE_ERROR
     );
     this.dialogService.setDisplayModalState(anotherConstants.TRUE);
-    this.errorService.overallError(error);
+    //this.errorService.overallError(error);
   }
 }

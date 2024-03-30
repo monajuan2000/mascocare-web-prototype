@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { AuthService } from '../security/services/auth.service';
-import { ErrorHandlingService } from '../services/Error/error-handling.service';
+import { ErrorHandlingService } from '../Errors/error-handling.service';
 import { OverallDialogService } from '../services/dialog/overall-dialog.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NGXLogger } from 'ngx-logger';

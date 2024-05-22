@@ -2,12 +2,78 @@
 @import "primeicons/primeicons.css"
 
 // styles.sass
-$superficie-600: rgb(19, 19, 19)
 $logotype-1: rgb(232, 87, 99)
+$logotype-2: rgb(34, 41, 89)
+$logotype-3: rgba(232, 87, 99,0.4)
+$error-red: rgba(255, 0, 0, 0.6)
+$warning-yellow: rgba(255, 255, 0, 0.6)
+$input-autofill-blue-900: #183462
+$gradient-1: linear-gradient(to right, $logotype-1, $logotype-2)
+$gradient-2: linear-gradient(to right, $logotype-1, $logotype-3)
+$overall-white: rgb(255, 255, 255)
+$transparent: rgba(128, 128, 128, 0.4)
+$transparent-2: rgba(128, 128, 128, 0.2)
+// Define variables
+$justify-content-center: center
+$align-items-center: center
+$display-flex: flex
+//Heigts
+$height-100: 100%
+//font-size
+$font-size-40px: 40px
 
-body,html
+@mixin white-gradient($param1, $param2)
+    background-image: linear-gradient(to right, $param1, $param2)
+    color: $overall-white
+@mixin pacifico-font-style()
+    font-family: 'Pacifico', cursive !important
+    color: $overall-white
+    font-style: normal
+    font-size: 20px
+@mixin roboto-font-style()
+    font-family: 'Roboto', sans-serif !important
+    color: $overall-white
+    font-style: normal
+    font-size: 20px
+    color: $overall-white !important
+
+@mixin overall-input()
+    width: 600px !important
+    background-color: $transparent-2 !important
+
+// Mixin for horizontal alignment
+@mixin align-horizontally($justify-content)
+    display: $display-flex
+    justify-content: $justify-content
+
+// Mixin for vertical alignment
+@mixin align-vertically($align-items)
+    display: $display-flex
+    align-items: $align-items
+
+// Mixin for complete alignment (horizontal and vertical)
+@mixin align-completely()
+    display: $display-flex
+    align-items: $align-items-center
+    justify-content: $justify-content-center
+
+@mixin background-main-image()
+    background-image: url('assets/images/MASCOCARE_PAGE_MAIN_IMAGE.png')
+    background-size: 100% 100%
+
+.home-component
+    .p-avatar.p-avatar-circle
+        overflow: visible
+
+html,body
     height: 100%
-    background-color: $superficie-600
+    margin: 0
+    @include background-main-image
+    @include pacifico-font-style()
 
-.test
-    background-color: $logotype-1
+.color-white
+    color: $overall-white !important
+.gradient-1
+    background-image: linear-gradient(to right, $logotype-1, $logotype-2)
+.background-transparent
+    background-color: $transparent

@@ -1,24 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoggingComponent } from './util/security/logging/logging.component';
-import { OwnersListComponent } from './util/owners/owners-list/owners-list.component';
+import { OwnersListComponent } from './util/owners/owners_list/owners-list.component';
 import { HomeComponent } from './util/home/home.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'security/logging',
+    redirectTo: '/mascocare-web-prototype/security/logging',
     pathMatch: 'full',
   },
   {
-    path: 'security/logging',
+    path: 'mascocare-web-prototype/security/logging',
     component: LoggingComponent,
   },
   {
-    path: 'owners/owners-list',
+    path: 'mascocare-web-prototype/owners/owners-list',
     component: OwnersListComponent,
   },
-  { path: 'home', component: HomeComponent },
+  { path: 'mascocare-web-prototype/home', component: HomeComponent },
 ];
 
 @NgModule({

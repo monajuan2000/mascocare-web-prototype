@@ -6,11 +6,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Password } from 'primeng/password';
 import { AuthenticationRequest } from '../../../request/base-request.model';
 import { NGXLogger } from 'ngx-logger';
-import { ErrorHandlingService } from 'src/app/util/errors/error-handling.service';
 import { OverallDialogService } from 'src/app/util/services/dialog/overall-dialog.service';
 import { stringConstants } from 'src/app/util/constants/string-constants';
-import { anotherConstants } from 'src/app/util/constants/another-constants';
 import { FormLogic } from 'src/app/util/utilities/form-logic';
+import { ErrorHandlingService } from 'src/app/util/errors/error-handling.service';
 
 @Component({
   selector: 'app-logging-form',
@@ -39,7 +38,7 @@ export class LoggingFormComponent {
   }
 
   protected saveForm = (): void => {
-    console.log(this.logginForm.value);
+    this.logger.log(this.logginForm.value);
     if (this.logginForm.valid) {
       this.formLogic.sendForm(this.logginForm.value);
     }

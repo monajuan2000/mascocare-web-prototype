@@ -11,6 +11,7 @@ $input-autofill-blue-900: #183462
 $gradient-1: linear-gradient(to right, $logotype-1, $logotype-2)
 $gradient-2: linear-gradient(to right, $logotype-1, $logotype-3)
 $overall-white: rgb(255, 255, 255)
+$overall-black: rgb(0, 0, 0)
 $transparent: rgba(128, 128, 128, 0.4)
 $transparent-2: rgba(128, 128, 128, 0.2)
 // Define variables
@@ -27,12 +28,12 @@ $font-size-40px: 40px
     color: $overall-white
 @mixin pacifico-font-style()
     font-family: 'Pacifico', cursive !important
-    color: $overall-white
+    color: $overall-black
     font-style: normal
     font-size: 20px
 @mixin roboto-font-style()
     font-family: 'Roboto', sans-serif !important
-    color: $overall-white
+    color: $overall-black
     font-style: normal
     font-size: 20px
 
@@ -71,7 +72,9 @@ html,body
     @include pacifico-font-style()
 
 .color-white
-    color: $overall-white !important
+    color: $overall-white
+.color-black
+    color: $overall-black
 .gradient-1
     background-image: linear-gradient(to right, $logotype-1, $logotype-2)
 .background-transparent

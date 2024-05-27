@@ -30,6 +30,7 @@ import { OverallDialogStructureComponent } from './util/components/overall_dialo
 import { ErrorDialogComponent } from './util/components/dialogs/error_dialog/error-dialog.component';
 import { WarningDialogComponent } from './util/components/dialogs/warning_dialog/warning-dialog.component';
 import { TableModule } from 'primeng/table';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { TableModule } from 'primeng/table';
     ProgressSpinnerModule,
     BrowserAnimationsModule,
     TableModule,
+    RadioButtonModule,
     LoggerModule.forRoot({
       // serverLoggingUrl: 'any-url in api',
       // serverLogLevel: NgxLoggerLevel.ERROR,

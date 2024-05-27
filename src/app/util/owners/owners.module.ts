@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { OwnersSignUpComponent } from './owners_sign_up/owners-sign-up.component';
 import { InputTextModule } from 'primeng/inputtext';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 @NgModule({
-  declarations: [OwnersSignUpComponent],
-  imports: [CommonModule, InputTextModule],
+  declarations: [],
+  imports: [CommonModule, InputTextModule, RadioButtonModule],
 })
 export class OwnersModule {}

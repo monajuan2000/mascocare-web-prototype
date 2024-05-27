@@ -1,15 +1,11 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { BaseRequest } from 'src/app/util/request/base-request.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Password } from 'primeng/password';
-import { AuthenticationRequest } from '../../../request/base-request.model';
 import { NGXLogger } from 'ngx-logger';
 import { OverallDialogService } from 'src/app/util/services/dialog/overall-dialog.service';
 import { stringConstants } from 'src/app/util/constants/string-constants';
 import { FormLogic } from 'src/app/util/utilities/form-logic';
-import { ErrorHandlingService } from 'src/app/util/errors/error-handling.service';
 
 @Component({
   selector: 'app-logging-form',
@@ -22,7 +18,6 @@ export class LoggingFormComponent {
   formLogic: FormLogic;
 
   constructor(
-    private errorService: ErrorHandlingService,
     private authService: AuthService,
     private dialogService: OverallDialogService,
     private router: Router,
@@ -47,7 +42,6 @@ export class LoggingFormComponent {
 
   private newFormLogic = (): FormLogic => {
     return (this.formLogic = new FormLogic(
-      this.errorService,
       this.authService,
       this.dialogService,
       this.router,

@@ -16,12 +16,8 @@
   </ng-template>
   <ng-template pTemplate="body" let-customer>
     <tr>
-      <!-- <td>{{ owners.firstName }}</td>
-      <td>{{ customer.country.name }}</td>
-      <td>{{ customer.company }}</td>
-      <td>{{ customer.representative.name }}</td> -->
       <td *ngFor="let owner of owners">
-        {{ owner.firstName }}
+        {{ owner.firstName }} {{ owner.lastName }}
       </td>
     </tr>
   </ng-template>

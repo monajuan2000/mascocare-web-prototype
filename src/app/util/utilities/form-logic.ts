@@ -3,14 +3,12 @@ import { OverallDialogService } from '../services/dialog/overall-dialog.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NGXLogger } from 'ngx-logger';
 import { stringConstants } from '../constants/string-constants';
-import {
-  AuthenticationRequest,
-  BaseRequest,
-} from '../request/base-request.model';
 import { anotherConstants } from '../constants/another-constants';
 import { catchError, of } from 'rxjs';
 import { HttpErrorRequest } from '../errors/http-error-request';
 import { AuthService } from 'src/app/security/services/auth.service';
+import { AuthenticationRequest } from 'src/app/security/request/mock-credentials';
+import { BaseRequest } from '../request/base-request.model';
 
 export class FormLogic {
   constructor(

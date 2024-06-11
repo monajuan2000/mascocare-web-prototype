@@ -9,16 +9,16 @@
 >
   <ng-template pTemplate="header">
     <tr>
-      <th style="width: 33%">Name</th>
-      <th style="width: 33%">Country</th>
-      <th style="width: 33%">Company</th>
+      <th style="width: 33%">Person Id</th>
+      <th style="width: 33%">Full Name</th>
+      <th style="width: 33%">Birth Date</th>
     </tr>
   </ng-template>
-  <ng-template pTemplate="body" let-customer>
+  <ng-template pTemplate="body" let-owner>
     <tr>
-      <td *ngFor="let owner of owners">
-        {{ owner.firstName }} {{ owner.lastName }}
-      </td>
+      <td>{{ owner.personId }}</td>
+      <td>{{ owner.firstName }} {{ owner.lastName }}</td>
+      <td>{{ owner.birthDate | date : "yyyy-MM-dd" }}</td>
     </tr>
   </ng-template>
   <ng-template pTemplate="paginatorleft">

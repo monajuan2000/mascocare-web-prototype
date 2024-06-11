@@ -6,7 +6,3 @@ export class BaseRequest {
     public redirectUrl: string
   ) {}
 }
-
-export class AuthenticationRequest {
-  constructor(public username: String, public password: String) {}
-}

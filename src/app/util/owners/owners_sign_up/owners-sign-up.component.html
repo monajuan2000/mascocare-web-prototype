@@ -1,5 +1,21 @@
 <div id="owners-signup-container">
-  <div id="background-transparent" class="background-transparent shadow-8">
-    <app-owners-signup-input></app-owners-signup-input>
+  <div id="background-transparent" class="grid background-transparent shadow-8">
+    <div class="col-6">
+      <app-owners-signup-input></app-owners-signup-input>
+    </div>
+    <div class="col-3">
+      <app-main-button
+        [label]="'Save'"
+        [type]="'submit'"
+        classes="gradient-1 p-button-rounded"
+      ></app-main-button>
+    </div>
+    <div class="col-3">
+      <app-main-button
+        [label]="'Clean'"
+        [type]="'Clean'"
+        classes="gradient-1 p-button-rounded"
+      ></app-main-button>
+    </div>
   </div>
 </div>

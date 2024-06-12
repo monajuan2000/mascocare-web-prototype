@@ -1,10 +1,12 @@
 import { Component, Input } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-main-button',
   templateUrl: './main-button.component.html',
   styleUrls: ['./main-button.component.sass'],
+  standalone: true,
+  imports: [ButtonModule],
 })
 export class MainButtonComponent {
   @Input()

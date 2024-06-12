@@ -18,34 +18,21 @@ import { MainToolbarComponent } from './util/home/main_toolbar/main-toolbar.comp
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import { DialogModule } from 'primeng/dialog';
-import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MainButtonComponent } from './util/components/main_button/main-button.component';
-import { OverallDialogComponent } from './util/components/dialogs/overall_dialog/overall-dialog.component';
-import { OverallDialogStructureComponent } from './util/components/overall_dialog_structure/overall-dialog-structure.component';
 import { ErrorDialogComponent } from './util/components/dialogs/error_dialog/error-dialog.component';
 import { WarningDialogComponent } from './util/components/dialogs/warning_dialog/warning-dialog.component';
 import { TableModule } from 'primeng/table';
 import { RadioButtonModule } from 'primeng/radiobutton';
-import { LoggingComponent } from './security/logging/logging.component';
-import { LinksLoginComponent } from './security/logging/components/links-login/links-login.component';
-import { LoggingFormComponent } from './security/logging/logging_form/logging-form.component';
 import { SecurityRoutingModule } from './security/security-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoggingComponent,
     OwnersListComponent,
     HomeComponent,
     MainToolbarComponent,
-    LoggingFormComponent,
-    OverallDialogComponent,
-    MainButtonComponent,
-    LinksLoginComponent,
-    OverallDialogStructureComponent,
     ErrorDialogComponent,
     WarningDialogComponent,
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +49,6 @@ import { SecurityRoutingModule } from './security/security-routing.module';
     AvatarModule,
     ReactiveFormsModule,
     DialogModule,
-    ProgressSpinnerModule,
     BrowserAnimationsModule,
     TableModule,
     RadioButtonModule,

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { OverallDialogService } from 'src/app/util/services/dialog/overall-dialog.service';
+import { MainButtonComponent } from '../../main_button/main-button.component';
 
 @Component({
   selector: 'app-error-dialog',

@@ -1,17 +1,27 @@
 <div id="owners-input-container" class="flex flex-column gap-2">
   <div class="flex flex-column gap-1 owners-signup-input">
     <label for="first-name">First Name</label>
-    <input pInputText id="first-name" aria-describedby="first-name-help" />
+    <input
+      pInputText
+      id="first-name"
+      aria-describedby="first-name-help"
+      class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+    />
     <small id="first-name-help"> Enter your firstName</small>
   </div>
 
   <div class="flex flex-column gap-1 owners-signup-input">
     <label for="last-name">Last Name</label>
-    <input pInputText id="last-name" aria-describedby="last-name-help" />
+    <input
+      pInputText
+      id="last-name"
+      aria-describedby="last-name-help"
+      class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+    />
     <small id="last-name-help"> Enter your last name</small>
   </div>
 
-  <div class="flex flex-column gap-1 owners-signup-input">
+  <div class="flex flex-column gap-2 owners-signup-input">
     <div class="flex-auto">
       <label for="icondisplay" class="font-bold block mb-2">
         Default Icon
@@ -20,12 +30,12 @@
     </div>
   </div>
 
-  <div class="flex flex-column gap-1 owners-signup-input">
-    <div class="flex align-items-center">
+  <div class="flex flex-row gap-2">
+    <div class="flex align-items-center justify-content-center">
       <p-radioButton name="male" value="Male" />
       <label class="ml-2"> Male </label>
     </div>
-    <div class="flex align-items-center">
+    <div class="flex align-items-center justify-content-center">
       <p-radioButton name="female" value="Female" />
       <label class="ml-2"> Female </label>
     </div>
@@ -38,6 +48,7 @@
       id="first-name"
       aria-describedby="payment-info-help"
       disabled
+      class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
     />
     <small id="payment-info-help"> Enter your payment info</small>
   </div>
@@ -49,6 +60,7 @@
       id="insurance-info-help"
       aria-describedby="insurance-info-help"
       disabled
+      class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
     />
     <small id="insurance-info-help"> Enter your insurance info</small>
   </div>

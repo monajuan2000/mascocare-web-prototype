@@ -21,11 +21,16 @@
     <small id="last-name-help"> Enter your last name</small>
   </div>
 
-  <div class="flex flex-column gap-2 owners-basic-input">
-    <div class="flex-auto">
-      <label for="icondisplay" class="font-bold block mb-2"> Birthday </label>
-      <p-calendar [showIcon]="true" inputId="icondisplay" />
-    </div>
+  <div class="flex flex-column gap-1 owners-basic-input">
+    <label for="birthday">Birthday</label>
+    <input
+      type="datetime-local"
+      pInputText
+      id="birthday"
+      aria-describedby="birthday-help"
+      class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+    />
+    <small id="birthday-help"> Enter your Birthday</small>
   </div>
 
   <!-- <div class="flex flex-row gap-2">

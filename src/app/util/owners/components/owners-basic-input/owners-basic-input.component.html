@@ -1,5 +1,5 @@
-<div id="owners-input-container" class="flex flex-column gap-2">
-  <div class="flex flex-column gap-1 owners-signup-input">
+<div id="owners-basicInput-container" class="flex flex-column gap-2">
+  <div class="flex flex-column gap-1 owners-basic-input">
     <label for="first-name">First Name</label>
     <input
       pInputText
@@ -10,7 +10,7 @@
     <small id="first-name-help"> Enter your firstName</small>
   </div>
 
-  <div class="flex flex-column gap-1 owners-signup-input">
+  <div class="flex flex-column gap-1 owners-basic-input">
     <label for="last-name">Last Name</label>
     <input
       pInputText
@@ -21,27 +21,25 @@
     <small id="last-name-help"> Enter your last name</small>
   </div>
 
-  <div class="flex flex-column gap-2 owners-signup-input">
+  <div class="flex flex-column gap-2 owners-basic-input">
     <div class="flex-auto">
-      <label for="icondisplay" class="font-bold block mb-2">
-        Default Icon
-      </label>
+      <label for="icondisplay" class="font-bold block mb-2"> Birthday </label>
       <p-calendar [showIcon]="true" inputId="icondisplay" />
     </div>
   </div>
 
-  <div class="flex flex-row gap-2">
-    <div class="flex align-items-center justify-content-center">
-      <p-radioButton name="male" value="Male" />
-      <label class="ml-2"> Male </label>
-    </div>
-    <div class="flex align-items-center justify-content-center">
-      <p-radioButton name="female" value="Female" />
-      <label class="ml-2"> Female </label>
-    </div>
-  </div>
+  <!-- <div class="flex flex-row gap-2">
+      <div class="flex align-items-center justify-content-center">
+        <p-radioButton name="male" value="Male" />
+        <label class="ml-2"> Male </label>
+      </div>
+      <div class="flex align-items-center justify-content-center">
+        <p-radioButton name="female" value="Female" />
+        <label class="ml-2"> Female </label>
+      </div>
+    </div> -->
 
-  <div class="flex flex-column gap-1 owners-signup-input">
+  <div class="flex flex-column gap-1 owners-basic-input">
     <label for="payment-info">Payment Info</label>
     <input
       pInputText
@@ -53,7 +51,7 @@
     <small id="payment-info-help"> Enter your payment info</small>
   </div>
 
-  <div class="flex flex-column gap-1 owners-signup-input">
+  <div class="flex flex-column gap-1 owners-basic-input">
     <label for="insurance-info-help">Insurance Info</label>
     <input
       pInputText

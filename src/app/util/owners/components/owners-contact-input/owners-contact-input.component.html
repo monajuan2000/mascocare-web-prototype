@@ -1,1 +1,45 @@
-<p>owners-contact-input works!</p>
+<div id="owners-basicInput-container" class="flex flex-column gap-2">
+  <app-title [mainTitle]="getMainTitle"></app-title>
+  <div class="flex flex-column gap-1 owners-basic-input">
+    <label for="address">Address</label>
+    <div class="input-container">
+      <input
+        type="text"
+        pInputText
+        id="address"
+        aria-describedby="address-help"
+        class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+      />
+      <i class="pi pi-map-marker input-icon"></i>
+    </div>
+    <small id="address-help"> Enter your address</small>
+  </div>
+  <div class="flex flex-column gap-1 owners-basic-input">
+    <label for="email">Email</label>
+    <div class="input-container">
+      <input
+        type="email"
+        pInputText
+        id="email"
+        aria-describedby="email-help"
+        class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+      />
+      <i class="pi pi-envelope input-icon"></i>
+    </div>
+    <small id="email-help"> Enter your Email</small>
+  </div>
+  <div class="flex flex-column gap-1 owners-basic-input p-inputgroup">
+    <label for="cell-phone">Cell-Phone</label>
+    <div class="input-container">
+      <input
+        type="number"
+        pInputText
+        id="cell-phone"
+        aria-describedby="cell-phone-help"
+        class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+      />
+      <i class="pi pi-phone input-icon"></i>
+    </div>
+    <small id="cell-phone-help"> Enter your Cell-Phone</small>
+  </div>
+</div>

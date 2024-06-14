@@ -1,23 +1,30 @@
 <div id="owners-basicInput-container" class="flex flex-column gap-2">
+  <app-title [mainTitle]="getMainTitle"></app-title>
   <div class="flex flex-column gap-1 owners-basic-input">
     <label for="first-name">First Name</label>
-    <input
-      pInputText
-      id="first-name"
-      aria-describedby="first-name-help"
-      class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-    />
+    <div class="input-container">
+      <input
+        pInputText
+        id="first-name"
+        aria-describedby="first-name-help"
+        class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+      />
+      <i class="pi pi-user input-icon"></i>
+    </div>
     <small id="first-name-help"> Enter your firstName</small>
   </div>
 
   <div class="flex flex-column gap-1 owners-basic-input">
     <label for="last-name">Last Name</label>
-    <input
-      pInputText
-      id="last-name"
-      aria-describedby="last-name-help"
-      class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-    />
+    <div class="input-container">
+      <input
+        pInputText
+        id="last-name"
+        aria-describedby="last-name-help"
+        class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+      />
+      <i class="pi pi-user input-icon"></i>
+    </div>
     <small id="last-name-help"> Enter your last name</small>
   </div>
 
@@ -46,25 +53,31 @@
 
   <div class="flex flex-column gap-1 owners-basic-input">
     <label for="payment-info">Payment Info</label>
-    <input
-      pInputText
-      id="first-name"
-      aria-describedby="payment-info-help"
-      disabled
-      class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-    />
+    <div class="input-container">
+      <input
+        pInputText
+        id="first-name"
+        aria-describedby="payment-info-help"
+        disabled
+        class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+      />
+      <i class="pi pi-user input-icon"></i>
+    </div>
     <small id="payment-info-help"> Enter your payment info</small>
   </div>
 
   <div class="flex flex-column gap-1 owners-basic-input">
     <label for="insurance-info-help">Insurance Info</label>
-    <input
-      pInputText
-      id="insurance-info-help"
-      aria-describedby="insurance-info-help"
-      disabled
-      class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-    />
+    <div class="input-container">
+      <input
+        pInputText
+        id="insurance-info-help"
+        aria-describedby="insurance-info-help"
+        disabled
+        class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+      />
+      <i class="pi pi-user input-icon"></i>
+    </div>
     <small id="insurance-info-help"> Enter your insurance info</small>
   </div>
 </div>

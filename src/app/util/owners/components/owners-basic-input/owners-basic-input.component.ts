@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CalendarModule } from 'primeng/calendar';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { OverallInputComponent } from 'src/app/util/components/overall_input/overall-input.component';
 import { TitleComponent } from 'src/app/util/components/title/title.component';
 
 @Component({
@@ -14,9 +15,11 @@ import { TitleComponent } from 'src/app/util/components/title/title.component';
     RadioButtonModule,
     ReactiveFormsModule,
     TitleComponent,
+    OverallInputComponent,
   ],
 })
 export class OwnersBasicInputComponent {
+  // private inputsName: string[] = ['First Name'];
   protected ownersDate: Date | undefined;
   private mainTitle: string = 'Basic information';
 

@@ -1,83 +1,43 @@
 <div id="owners-basicInput-container" class="flex flex-column gap-2">
   <app-title [mainTitle]="getMainTitle"></app-title>
-  <div class="flex flex-column gap-1 owners-basic-input">
-    <label for="first-name">First Name</label>
-    <div class="input-container">
-      <input
-        pInputText
-        id="first-name"
-        aria-describedby="first-name-help"
-        class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-      />
-      <i class="pi pi-user input-icon"></i>
+  <app-overall-input
+    [id]="'first-name'"
+    [icon]="'pi pi-user input-icon'"
+    [inputName]="'First Name'"
+  ></app-overall-input>
+
+  <app-overall-input
+    [id]="'last-name'"
+    [icon]="'pi pi-user input-icon'"
+    [inputName]="'Last Name'"
+  ></app-overall-input>
+
+  <app-overall-input
+    [id]="'birthday'"
+    [inputName]="'Birthday'"
+    [type]="'datetime-local'"
+  ></app-overall-input>
+
+  <div class="flex flex-row gap-2">
+    <div class="flex align-items-center justify-content-center">
+      <p-radioButton name="male" value="Male" />
+      <label class="ml-2"> Male </label>
     </div>
-    <small id="first-name-help"> Enter your firstName</small>
-  </div>
-
-  <div class="flex flex-column gap-1 owners-basic-input">
-    <label for="last-name">Last Name</label>
-    <div class="input-container">
-      <input
-        pInputText
-        id="last-name"
-        aria-describedby="last-name-help"
-        class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-      />
-      <i class="pi pi-user input-icon"></i>
+    <div class="flex align-items-center justify-content-center">
+      <p-radioButton name="female" value="Female" />
+      <label class="ml-2"> Female </label>
     </div>
-    <small id="last-name-help"> Enter your last name</small>
   </div>
 
-  <div class="flex flex-column gap-1 owners-basic-input">
-    <label for="birthday">Birthday</label>
-    <input
-      type="datetime-local"
-      pInputText
-      id="birthday"
-      aria-describedby="birthday-help"
-      class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-    />
-    <small id="birthday-help"> Enter your Birthday</small>
-  </div>
+  <app-overall-input
+    [id]="'payment-info'"
+    [icon]="'pi pi-user input-icon'"
+    [inputName]="'Payment Info'"
+  ></app-overall-input>
 
-  <!-- <div class="flex flex-row gap-2">
-      <div class="flex align-items-center justify-content-center">
-        <p-radioButton name="male" value="Male" />
-        <label class="ml-2"> Male </label>
-      </div>
-      <div class="flex align-items-center justify-content-center">
-        <p-radioButton name="female" value="Female" />
-        <label class="ml-2"> Female </label>
-      </div>
-    </div> -->
-
-  <div class="flex flex-column gap-1 owners-basic-input">
-    <label for="payment-info">Payment Info</label>
-    <div class="input-container">
-      <input
-        pInputText
-        id="first-name"
-        aria-describedby="payment-info-help"
-        disabled
-        class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-      />
-      <i class="pi pi-user input-icon"></i>
-    </div>
-    <small id="payment-info-help"> Enter your payment info</small>
-  </div>
-
-  <div class="flex flex-column gap-1 owners-basic-input">
-    <label for="insurance-info-help">Insurance Info</label>
-    <div class="input-container">
-      <input
-        pInputText
-        id="insurance-info-help"
-        aria-describedby="insurance-info-help"
-        disabled
-        class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-      />
-      <i class="pi pi-user input-icon"></i>
-    </div>
-    <small id="insurance-info-help"> Enter your insurance info</small>
-  </div>
+  <app-overall-input
+    [id]="'insurance-info'"
+    [icon]="'pi pi-user input-icon'"
+    [inputName]="'Insurance Info'"
+  ></app-overall-input>
 </div>

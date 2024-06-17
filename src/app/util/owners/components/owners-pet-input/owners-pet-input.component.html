@@ -1,1 +1,8 @@
-<p>owners-pet-input works!</p>
+<div id="owners-basicInput-container" class="flex flex-column gap-2">
+  <app-title [mainTitle]="getMainTitle"></app-title>
+  <app-overall-input
+    [inputId]="'petName'"
+    [icon]="'pi pi-envelope input-icon'"
+    [inputName]="'Email'"
+  ></app-overall-input>
+</div>

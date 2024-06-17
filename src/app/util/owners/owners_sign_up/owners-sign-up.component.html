@@ -1,27 +1,33 @@
 <div id="owners-signup-container">
-  <div
+  <form
     id="transparent-background-container"
     class="grid transparent-background shadow-8"
+    (ngSubmit)="printResult()"
+    [formGroup]="getSignUpForm"
   >
     <div class="col-6">
-      <app-owners-basic-input></app-owners-basic-input>
+      <app-owners-basic-input
+        [basicOwnerForm]="getSignUpForm.get('basicOwnerForm')!"
+      ></app-owners-basic-input>
     </div>
     <div class="col-6">
-      <app-owners-contact-input></app-owners-contact-input>
+      <app-owners-contact-input
+        [contactOwnerForm]="getSignUpForm.get('contactOwnerForm')!"
+      ></app-owners-contact-input>
     </div>
     <div class="col-3">
       <app-main-button
-        [label]="'Save'"
+        [label]="'Save Form'"
         [type]="'submit'"
         classes="gradient-1 p-button-rounded"
       ></app-main-button>
     </div>
     <div class="col-3">
       <app-main-button
-        [label]="'Clean'"
-        [type]="'Clean'"
+        [label]="'Reset Form'"
+        [type]="'reset'"
         classes="gradient-1 p-button-rounded"
       ></app-main-button>
     </div>
-  </div>
+  </form>
 </div>

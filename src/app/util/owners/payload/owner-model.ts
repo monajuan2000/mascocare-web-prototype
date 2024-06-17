@@ -17,8 +17,8 @@ interface Pet {
   petId: string;
   name: string;
   age: number;
-  gender: 'MALE' | 'FEMALE';
   weight: number;
+  gender: 'MALE' | 'FEMALE';
 }
 
 export interface Owner extends Person {

@@ -1,12 +1,13 @@
-<div class="flex flex-column gap-1 owners-basic-input">
+<div [formGroup]="getAnyForm" class="flex flex-column gap-1 owners-basic-input">
   <label>{{ getInputName }}</label>
   <div class="input-container">
     <input
+      [formControlName]="getInputId"
       [type]="getType"
       aria-describedby="overall-input-help"
       class="input text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
     />
     <i [className]="getIcon"></i>
   </div>
-  <small id="overall-input"> Enter your {{ getInputName }}</small>
+  <small id="overall-input-help"> Enter your {{ getInputName }}</small>
 </div>

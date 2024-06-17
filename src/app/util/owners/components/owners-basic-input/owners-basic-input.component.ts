@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { Component, EventEmitter, Input } from '@angular/core';
+import {
+  AbstractControl,
+  FormGroup,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { CalendarModule } from 'primeng/calendar';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { OverallInputComponent } from 'src/app/util/components/overall_input/overall-input.component';
@@ -16,14 +20,19 @@ import { TitleComponent } from 'src/app/util/components/title/title.component';
     ReactiveFormsModule,
     TitleComponent,
     OverallInputComponent,
+    ReactiveFormsModule,
   ],
 })
 export class OwnersBasicInputComponent {
-  // private inputsName: string[] = ['First Name'];
   protected ownersDate: Date | undefined;
   private mainTitle: string = 'Basic information';
+  @Input() basicOwnerForm!: AbstractControl;
 
   protected get getMainTitle(): string {
     return this.mainTitle;
+  }
+
+  protected get getBasicOwnerForm(): FormGroup {
+    return this.basicOwnerForm as FormGroup;
   }
 }

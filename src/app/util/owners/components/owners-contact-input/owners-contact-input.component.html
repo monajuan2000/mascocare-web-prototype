@@ -1,18 +1,21 @@
 <div id="owners-basicInput-container" class="flex flex-column gap-2">
   <app-title [mainTitle]="getMainTitle"></app-title>
   <app-overall-input
-    [id]="'email'"
-    [icon]="'pi pi-map-marker input-icon'"
-    [inputName]="'Address'"
-  ></app-overall-input>
-  <app-overall-input
-    [id]="'address'"
+    [inputId]="'email'"
     [icon]="'pi pi-envelope input-icon'"
     [inputName]="'Email'"
+    [anyForm]="getContactOwnerForm"
   ></app-overall-input>
   <app-overall-input
-    [id]="'cell-phone'"
+    [inputId]="'address'"
+    [icon]="'pi pi-map-marker input-icon'"
+    [inputName]="'Address'"
+    [anyForm]="getContactOwnerForm"
+  ></app-overall-input>
+  <app-overall-input
+    [inputId]="'phone'"
     [icon]="'pi pi-phone input-icon'"
     [inputName]="'Cell-Phone'"
+    [anyForm]="getContactOwnerForm"
   ></app-overall-input>
 </div>

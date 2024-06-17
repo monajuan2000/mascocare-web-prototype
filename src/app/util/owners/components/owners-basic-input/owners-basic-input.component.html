@@ -1,23 +1,31 @@
-<div id="owners-basicInput-container" class="flex flex-column gap-2">
+<div
+  id="owners-basicInput-container"
+  class="flex flex-column gap-2"
+  [formGroup]="getBasicOwnerForm"
+>
   <app-title [mainTitle]="getMainTitle"></app-title>
+
   <app-overall-input
-    [id]="'first-name'"
+    [inputId]="'firstName'"
     [icon]="'pi pi-user input-icon'"
     [inputName]="'First Name'"
+    [anyForm]="getBasicOwnerForm"
   ></app-overall-input>
 
   <app-overall-input
-    [id]="'last-name'"
+    [inputId]="'lastName'"
     [icon]="'pi pi-user input-icon'"
     [inputName]="'Last Name'"
+    [anyForm]="getBasicOwnerForm"
   ></app-overall-input>
 
   <app-overall-input
-    [id]="'birthday'"
+    [inputId]="'birthday'"
     [inputName]="'Birthday'"
     [type]="'datetime-local'"
+    [anyForm]="getBasicOwnerForm"
   ></app-overall-input>
-
+  <!-- 
   <div class="flex flex-row gap-2">
     <div class="flex align-items-center justify-content-center">
       <p-radioButton name="male" value="Male" />
@@ -27,17 +35,19 @@
       <p-radioButton name="female" value="Female" />
       <label class="ml-2"> Female </label>
     </div>
-  </div>
+  </div> -->
 
   <app-overall-input
-    [id]="'payment-info'"
+    [inputId]="'paymentInfo'"
     [icon]="'pi pi-user input-icon'"
     [inputName]="'Payment Info'"
+    [anyForm]="getBasicOwnerForm"
   ></app-overall-input>
 
   <app-overall-input
-    [id]="'insurance-info'"
+    [inputId]="'insuranceInfo'"
     [icon]="'pi pi-user input-icon'"
     [inputName]="'Insurance Info'"
+    [anyForm]="getBasicOwnerForm"
   ></app-overall-input>
 </div>

@@ -1,19 +1,21 @@
 import { Component, Input } from '@angular/core';
 import {
   AbstractControl,
-  FormBuilder,
   FormGroup,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'app-overall-input',
   templateUrl: './overall-input.component.html',
   styleUrls: ['./overall-input.component.sass'],
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, FontAwesomeModule],
 })
 export class OverallInputComponent {
+  @Input() faIcon!: IconDefinition;
   @Input() anyForm!: AbstractControl;
   @Input() inputId!: string;
   @Input() inputName!: string;
@@ -38,5 +40,10 @@ export class OverallInputComponent {
 
   protected get getAnyForm(): FormGroup {
     return this.anyForm as FormGroup;
+  }
+
+  protected get getFaIcon(): IconDefinition {
+    console.log(this.faIcon);
+    return this.faIcon;
   }
 }

@@ -24,6 +24,7 @@ import { WarningDialogComponent } from './util/components/dialogs/warning_dialog
 import { TableModule } from 'primeng/table';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { SecurityRoutingModule } from './security/security-routing.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { SecurityRoutingModule } from './security/security-routing.module';
       level: NgxLoggerLevel.TRACE,
       disableConsoleLogging: false,
     }),
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

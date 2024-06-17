@@ -31,4 +31,9 @@ export class OwnersPetInputComponent {
   protected get getPetOwnerForm(): FormGroup {
     return this.petOwnerForm as FormGroup;
   }
+
+  // protected get getFaDog(): IconDefinition {
+  //   console.log(faDog);
+  //   return faDog;
+  // }
 }

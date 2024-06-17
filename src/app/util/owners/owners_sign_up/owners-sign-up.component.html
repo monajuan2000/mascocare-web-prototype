@@ -15,6 +15,10 @@
         [contactOwnerForm]="getSignUpForm.get('contactOwnerForm')!"
       ></app-owners-contact-input>
     </div>
+    <div class="col-12">
+      <app-owners-pet-input [petOwnerForm]="getSignUpForm.get('petOwnerForm')!">
+      </app-owners-pet-input>
+    </div>
     <div class="col-3">
       <app-main-button
         [label]="'Save Form'"

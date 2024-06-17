@@ -1,5 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { AbstractControl } from '@angular/forms';
+import {
+  AbstractControl,
+  FormGroup,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { OverallInputComponent } from 'src/app/util/components/overall_input/overall-input.component';
 import { TitleComponent } from 'src/app/util/components/title/title.component';
@@ -9,13 +13,22 @@ import { TitleComponent } from 'src/app/util/components/title/title.component';
   templateUrl: './owners-pet-input.component.html',
   styleUrls: ['./owners-pet-input.component.sass'],
   standalone: true,
-  imports: [InputTextModule, TitleComponent, OverallInputComponent],
+  imports: [
+    InputTextModule,
+    TitleComponent,
+    OverallInputComponent,
+    ReactiveFormsModule,
+  ],
 })
 export class OwnersPetInputComponent {
   private mainTitle: string = 'Pets information';
-  @Input() contactOwnerForm!: AbstractControl;
+  @Input() petOwnerForm!: AbstractControl;
 
   protected get getMainTitle(): string {
     return this.mainTitle;
+  }
+
+  protected get getPetOwnerForm(): FormGroup {
+    return this.petOwnerForm as FormGroup;
   }
 }

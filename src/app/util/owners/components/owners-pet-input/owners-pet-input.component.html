@@ -1,8 +1,30 @@
-<div id="owners-basicInput-container" class="flex flex-column gap-2">
+<div
+  [formGroup]="getPetOwnerForm"
+  id="owners-basicInput-container"
+  class="flex flex-column gap-2"
+>
   <app-title [mainTitle]="getMainTitle"></app-title>
   <app-overall-input
-    [inputId]="'petName'"
+    [inputId]="'name'"
+    [inputName]="'Name'"
+    [anyForm]="getPetOwnerForm"
+  ></app-overall-input>
+  <app-overall-input
+    [inputId]="'age'"
     [icon]="'pi pi-envelope input-icon'"
-    [inputName]="'Email'"
+    [inputName]="'Age'"
+    [anyForm]="getPetOwnerForm"
+    [type]="'number'"
+  ></app-overall-input>
+  <app-overall-input
+    [inputId]="'gender'"
+    [inputName]="'Gender'"
+    [anyForm]="getPetOwnerForm"
+  ></app-overall-input>
+  <app-overall-input
+    [inputId]="'weight'"
+    [inputName]="'Weight'"
+    [anyForm]="getPetOwnerForm"
+    [type]="'number'"
   ></app-overall-input>
 </div>

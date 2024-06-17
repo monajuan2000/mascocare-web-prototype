@@ -3,6 +3,7 @@ import { MainButtonComponent } from '../../components/main_button/main-button.co
 import { OwnersBasicInputComponent } from '../components/owners-basic-input/owners-basic-input.component';
 import { OwnersContactInputComponent } from '../components/owners-contact-input/owners-contact-input.component';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { OwnersPetInputComponent } from '../components/owners-pet-input/owners-pet-input.component';
 
 @Component({
   selector: 'app-owners-sign-up',
@@ -14,6 +15,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
     OwnersContactInputComponent,
     MainButtonComponent,
     ReactiveFormsModule,
+    OwnersPetInputComponent,
   ],
 })
 export class OwnersSignUpComponent implements OnInit {
@@ -39,6 +41,12 @@ export class OwnersSignUpComponent implements OnInit {
         email: [''],
         address: [''],
         phone: [''],
+      }),
+      petOwnerForm: this.fb.group({
+        name: [''],
+        age: [''],
+        gender: [''],
+        weight: [''],
       }),
     });
   };

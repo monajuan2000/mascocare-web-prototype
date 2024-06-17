@@ -1,4 +1,8 @@
-<div id="owners-basicInput-container" class="flex flex-column gap-2">
+<div
+  [formGroup]="getContactOwnerForm"
+  id="owners-basicInput-container"
+  class="flex flex-column gap-2"
+>
   <app-title [mainTitle]="getMainTitle"></app-title>
   <app-overall-input
     [inputId]="'email'"

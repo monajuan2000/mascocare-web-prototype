@@ -20,7 +20,6 @@ import { TitleComponent } from 'src/app/util/components/title/title.component';
     ReactiveFormsModule,
     TitleComponent,
     OverallInputComponent,
-    ReactiveFormsModule,
   ],
 })
 export class OwnersBasicInputComponent {

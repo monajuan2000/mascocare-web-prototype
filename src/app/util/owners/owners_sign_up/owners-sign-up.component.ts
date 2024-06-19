@@ -34,8 +34,8 @@ export class OwnersSignUpComponent implements OnInit {
         firstName: [''],
         lastName: [''],
         birthday: [''],
-        paymentInfo: [''],
-        insuranceInfo: [''],
+        paymentInfo: [{ value: '', disabled: true }],
+        insuranceInfo: [{ value: '', disabled: true }],
       }),
       contactOwnerForm: this.fb.group({
         email: [''],

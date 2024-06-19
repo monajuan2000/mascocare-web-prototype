@@ -16,6 +16,7 @@ import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 })
 export class OverallInputComponent {
   @Input() faIcon!: IconDefinition;
+  @Input() message!: string;
   @Input() anyForm!: AbstractControl;
   @Input() inputId!: string;
   @Input() inputName!: string;
@@ -40,6 +41,10 @@ export class OverallInputComponent {
 
   protected get getAnyForm(): FormGroup {
     return this.anyForm as FormGroup;
+  }
+
+  protected get getMessage(): string {
+    return this.message;
   }
 
   protected get getFaIcon(): IconDefinition {

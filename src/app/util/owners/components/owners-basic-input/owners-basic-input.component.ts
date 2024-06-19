@@ -25,6 +25,7 @@ import { TitleComponent } from 'src/app/util/components/title/title.component';
 export class OwnersBasicInputComponent {
   protected ownersDate: Date | undefined;
   private mainTitle: string = 'Basic information';
+  private message: string = 'Enter your ';
   @Input() basicOwnerForm!: AbstractControl;
 
   protected get getMainTitle(): string {
@@ -33,5 +34,9 @@ export class OwnersBasicInputComponent {
 
   protected get getBasicOwnerForm(): FormGroup {
     return this.basicOwnerForm as FormGroup;
+  }
+
+  protected get getMessage(): string {
+    return this.message;
   }
 }

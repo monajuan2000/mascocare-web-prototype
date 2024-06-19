@@ -23,6 +23,7 @@ import { TitleComponent } from 'src/app/util/components/title/title.component';
 })
 export class OwnersContactInputComponent {
   private mainTitle: string = 'Contact information';
+  private message: string = 'Enter your ';
   @Input() contactOwnerForm!: AbstractControl;
 
   protected get getMainTitle(): string {
@@ -31,5 +32,9 @@ export class OwnersContactInputComponent {
 
   protected get getContactOwnerForm(): FormGroup {
     return this.contactOwnerForm as FormGroup;
+  }
+
+  protected get getMessage(): string {
+    return this.message;
   }
 }

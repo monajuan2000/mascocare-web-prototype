@@ -22,6 +22,7 @@ import { TitleComponent } from 'src/app/util/components/title/title.component';
 })
 export class OwnersPetInputComponent {
   private mainTitle: string = 'Pets information';
+  private message: string = "Enter your Pet's ";
   @Input() petOwnerForm!: AbstractControl;
 
   protected get getMainTitle(): string {
@@ -30,6 +31,10 @@ export class OwnersPetInputComponent {
 
   protected get getPetOwnerForm(): FormGroup {
     return this.petOwnerForm as FormGroup;
+  }
+
+  protected get getMessage(): string {
+    return this.message;
   }
 
   // protected get getFaDog(): IconDefinition {

@@ -9,6 +9,7 @@
     [icon]="'pi pi-question-circle input-icon'"
     [inputName]="'Name'"
     [anyForm]="getPetOwnerForm"
+    [message]="getMessage"
   ></app-overall-input>
   <app-overall-input
     [inputId]="'age'"
@@ -16,12 +17,14 @@
     [inputName]="'Age'"
     [anyForm]="getPetOwnerForm"
     [type]="'number'"
+    [message]="getMessage"
   ></app-overall-input>
   <app-overall-input
     [inputId]="'gender'"
     [icon]="'pi pi-question-circle input-icon'"
     [inputName]="'Gender'"
     [anyForm]="getPetOwnerForm"
+    [message]="getMessage"
   ></app-overall-input>
   <app-overall-input
     [inputId]="'weight'"
@@ -29,5 +32,6 @@
     [inputName]="'Weight'"
     [anyForm]="getPetOwnerForm"
     [type]="'number'"
+    [message]="getMessage"
   ></app-overall-input>
 </div>

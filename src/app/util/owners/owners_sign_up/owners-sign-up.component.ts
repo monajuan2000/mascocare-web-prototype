@@ -4,6 +4,10 @@ import { OwnersBasicInputComponent } from '../components/owners-basic-input/owne
 import { OwnersContactInputComponent } from '../components/owners-contact-input/owners-contact-input.component';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { OwnersPetInputComponent } from '../components/owners-pet-input/owners-pet-input.component';
+import { StepsModule } from 'primeng/steps';
+import { ToastModule } from 'primeng/toast';
+import { CommonModule } from '@angular/common';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-owners-sign-up',
@@ -16,16 +20,38 @@ import { OwnersPetInputComponent } from '../components/owners-pet-input/owners-p
     MainButtonComponent,
     ReactiveFormsModule,
     OwnersPetInputComponent,
+    StepsModule,
+    ToastModule,
+    CommonModule,
+    ButtonModule,
   ],
 })
 export class OwnersSignUpComponent implements OnInit {
-  protected signUpForm!: FormGroup;
+  private signUpForm!: FormGroup;
+  private isDisableComponent!: boolean;
+  private activeStep: 0 | 1 | 2 | 3 = 0;
+  protected items!: any[];
 
   constructor(private fb: FormBuilder) {
     this.initializeForm();
   }
   ngOnInit(): void {
     this.printResult();
+    this.items = [
+      {
+        label: 'Personal Information',
+        // routerLink: '/mascocare-web-prototype/owners/basic',
+      },
+      {
+        label: 'Contact',
+      },
+      {
+        label: 'Pets Information',
+      },
+      {
+        label: 'Confirmation',
+      },
+    ];
   }
 
   private initializeForm = (): void => {
@@ -34,6 +60,7 @@ export class OwnersSignUpComponent implements OnInit {
         firstName: [''],
         lastName: [''],
         birthday: [''],
+        gender: [''],
         paymentInfo: [{ value: '', disabled: true }],
         insuranceInfo: [{ value: '', disabled: true }],
       }),
@@ -57,7 +84,20 @@ export class OwnersSignUpComponent implements OnInit {
     // else console.log('Form is invalid');
   };
 
+  protected changeActiveStep = (change: string): void => {
+    if (change === 'Next' && this.activeStep < 3) this.activeStep++;
+    if (change === 'Back' && this.activeStep > 0) this.activeStep--;
+  };
+
   protected get getSignUpForm(): FormGroup {
     return this.signUpForm;
+  }
+
+  protected get getIsDisableComponent(): boolean {
+    return this.isDisableComponent;
+  }
+
+  protected get getActiveSteps(): number {
+    return this.activeStep;
   }
 }

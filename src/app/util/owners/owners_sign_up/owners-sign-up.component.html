@@ -5,31 +5,55 @@
     (ngSubmit)="printResult()"
     [formGroup]="getSignUpForm"
   >
-    <div class="col-6">
+    <div class="col-12">
+      <p-steps
+        [activeIndex]="getActiveSteps"
+        [model]="items"
+        [readonly]="false"
+      />
+    </div>
+    <div class="col-6 flex justify-content-center">
+      <p-button
+        (onClick)="changeActiveStep('Back')"
+        label="Back"
+        icon="pi pi-arrow-left"
+      />
+    </div>
+    <div class="col-6 flex justify-content-center">
+      <p-button
+        (onClick)="changeActiveStep('Next')"
+        label="Next"
+        icon="pi pi-arrow-right"
+        iconPos="right"
+      />
+    </div>
+    <div class="col-12" *ngIf="getActiveSteps === 0">
       <app-owners-basic-input
         [basicOwnerForm]="getSignUpForm.get('basicOwnerForm')!"
       ></app-owners-basic-input>
     </div>
-    <div class="col-6">
+
+    <div class="col-12" *ngIf="getActiveSteps === 1">
       <app-owners-contact-input
         [contactOwnerForm]="getSignUpForm.get('contactOwnerForm')!"
       ></app-owners-contact-input>
     </div>
-    <div class="col-12">
+    <div class="col-12" *ngIf="getActiveSteps === 2">
       <app-owners-pet-input [petOwnerForm]="getSignUpForm.get('petOwnerForm')!">
       </app-owners-pet-input>
     </div>
-    <div class="col-3">
-      <app-main-button
-        [label]="'Save Form'"
-        [type]="'submit'"
-        classes="gradient-1 p-button-rounded"
-      ></app-main-button>
-    </div>
-    <div class="col-3">
+    <div class="col-6 flex justify-content-center">
       <app-main-button
         [label]="'Reset Form'"
         [type]="'reset'"
+        classes="gradient-1 p-button-rounded"
+      ></app-main-button>
+    </div>
+    <div class="col-6 flex justify-content-center">
+      <app-main-button
+        [label]="'Save Form'"
+        [type]="'submit'"
+        [invalid]="true"
         classes="gradient-1 p-button-rounded"
       ></app-main-button>
     </div>

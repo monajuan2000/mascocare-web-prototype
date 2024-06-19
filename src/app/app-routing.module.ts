@@ -4,6 +4,7 @@ import { OwnersListComponent } from './util/owners/owners_list/owners-list.compo
 import { HomeComponent } from './util/home/home.component';
 import { OwnersSignUpComponent } from './util/owners/owners_sign_up/owners-sign-up.component';
 import { LoggingComponent } from './security/logging/logging.component';
+import { OwnersBasicInputComponent } from './util/owners/components/owners-basic-input/owners-basic-input.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,10 @@ const routes: Routes = [
     component: OwnersSignUpComponent,
   },
   { path: 'mascocare-web-prototype/home', component: HomeComponent },
+  {
+    path: 'mascocare-web-prototype/owners/basic',
+    component: OwnersBasicInputComponent,
+  },
 ];
 
 @NgModule({

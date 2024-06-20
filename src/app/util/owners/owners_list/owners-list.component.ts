@@ -10,10 +10,10 @@ import { Owner } from '../payload/owner-model';
 export class OwnersListComponent implements OnInit {
   owners: Owner[] = [];
 
-  constructor(private servicio: OwnerService) {}
+  constructor(private ownerService: OwnerService) {}
 
   ngOnInit(): void {
-    this.servicio.getAllOwners().subscribe({
+    this.ownerService.getAllOwners().subscribe({
       next: (data) => {
         this.owners = data;
       },

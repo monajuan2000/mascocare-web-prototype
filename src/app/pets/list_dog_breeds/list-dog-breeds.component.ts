@@ -1,36 +1,27 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {
   AbstractControl,
   FormGroup,
   ReactiveFormsModule,
 } from '@angular/forms';
 import { SelectItemGroup } from 'primeng/api';
-import { InputTextModule } from 'primeng/inputtext';
-import { ListDogBreedsComponent } from 'src/app/pets/list_dog_breeds/list-dog-breeds.component';
-import { OverallInputComponent } from 'src/app/util/components/overall_input/overall-input.component';
-import { TitleComponent } from 'src/app/util/components/title/title.component';
+import { ListboxModule } from 'primeng/listbox';
+import { PetService } from '../services/pet.service';
 
 @Component({
-  selector: 'app-owners-pet-input',
-  templateUrl: './owners-pet-input.component.html',
-  styleUrls: ['./owners-pet-input.component.sass'],
+  selector: 'app-list-dog-breeds',
+  templateUrl: './list-dog-breeds.component.html',
+  styleUrls: ['./list-dog-breeds.component.sass'],
   standalone: true,
-  imports: [
-    InputTextModule,
-    ReactiveFormsModule,
-    TitleComponent,
-    OverallInputComponent,
-    ListDogBreedsComponent,
-  ],
+  imports: [ReactiveFormsModule, ListboxModule],
 })
-export class OwnersPetInputComponent {
-  private mainTitle: string = 'Pets information';
-  private message: string = "Enter your Pet's ";
+export class ListDogBreedsComponent implements OnInit {
   protected groupedCities!: SelectItemGroup[];
+  private testList!: any[];
   protected selectedCountry!: any;
   @Input() petOwnerForm!: AbstractControl;
 
-  constructor() {
+  constructor(private petService: PetService) {
     this.groupedCities = [
       {
         label: 'Germany',
@@ -64,21 +55,23 @@ export class OwnersPetInputComponent {
       },
     ];
   }
-
-  protected get getMainTitle(): string {
-    return this.mainTitle;
+  ngOnInit(): void {
+    this.petService.getAllDogBreeds().subscribe({
+      next: (data) => {
+        console.log(data);
+        this.testList = data;
+      },
+      error: (error) => {
+        console.error('Error al recuperar los propietarios', error);
+      },
+    });
   }
 
   protected get getPetOwnerForm(): FormGroup {
     return this.petOwnerForm as FormGroup;
   }
 
-  protected get getMessage(): string {
-    return this.message;
+  protected get getDogBreeds(): any[] {
+    return this.testList;
   }
-
-  // protected get getFaDog(): IconDefinition {
-  //   console.log(faDog);
-  //   return faDog;
-  // }
 }

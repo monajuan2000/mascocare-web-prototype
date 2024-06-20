@@ -70,6 +70,7 @@ export class OwnersSignUpComponent implements OnInit {
         phone: [''],
       }),
       petOwnerForm: this.fb.group({
+        breed: [''],
         name: [''],
         age: [''],
         gender: [''],

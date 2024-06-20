@@ -1,6 +1,7 @@
 interface ApiUrls {
   LOGIN_URL: string;
-  ALL_OWNERS_URL: string;
+  URL_ALL_OWNERS: string;
+  URL_ALL_DOG_BREEDS: string;
 }
 
 const baseUrl = {
@@ -9,5 +10,6 @@ const baseUrl = {
 
 export const apiUrl: ApiUrls = {
   LOGIN_URL: baseUrl.BASE_URL + 'login',
-  ALL_OWNERS_URL: baseUrl.BASE_URL + 'util/owners/getAllOwners?version=1',
+  URL_ALL_OWNERS: baseUrl.BASE_URL + 'util/owners/getAllOwners?version=1',
+  URL_ALL_DOG_BREEDS: baseUrl.BASE_URL + 'util/pets/getAllDogBreeds?version=1',
 };

@@ -6,8 +6,9 @@ import {
 } from '@angular/forms';
 import { SelectItemGroup } from 'primeng/api';
 import { InputTextModule } from 'primeng/inputtext';
-import { ListDogBreedsComponent } from 'src/app/pets/list_dog_breed/list-dog-breed.component';
-import { PetListComponent } from 'src/app/pets/pet_list/pet-list.component';
+import { ListCatBreedComponent } from 'src/app/pets/components/list_cat_breed/list-cat-breed.component';
+import { ListDogBreedsComponent } from 'src/app/pets/components/list_dog_breed/list-dog-breed.component';
+import { PetListComponent } from 'src/app/pets/components/pet_list/pet-list.component';
 import { OverallInputComponent } from 'src/app/util/components/overall_input/overall-input.component';
 import { TitleComponent } from 'src/app/util/components/title/title.component';
 
@@ -21,51 +22,17 @@ import { TitleComponent } from 'src/app/util/components/title/title.component';
     ReactiveFormsModule,
     TitleComponent,
     OverallInputComponent,
-    ListDogBreedsComponent,
     PetListComponent,
+    ListDogBreedsComponent,
+    ListCatBreedComponent,
   ],
 })
 export class OwnersPetInputComponent {
   private mainTitle: string = 'Pets information';
   private message: string = "Enter your Pet's ";
-  protected groupedCities!: SelectItemGroup[];
-  protected selectedCountry!: any;
   @Input() petOwnerForm!: AbstractControl;
 
-  constructor() {
-    this.groupedCities = [
-      {
-        label: 'Germany',
-        value: 'de',
-        items: [
-          { label: 'Berlin', value: 'Berlin' },
-          { label: 'Frankfurt', value: 'Frankfurt' },
-          { label: 'Hamburg', value: 'Hamburg' },
-          { label: 'Munich', value: 'Munich' },
-        ],
-      },
-      {
-        label: 'USA',
-        value: 'us',
-        items: [
-          { label: 'Chicago', value: 'Chicago' },
-          { label: 'Los Angeles', value: 'Los Angeles' },
-          { label: 'New York', value: 'New York' },
-          { label: 'San Francisco', value: 'San Francisco' },
-        ],
-      },
-      {
-        label: 'Japan',
-        value: 'jp',
-        items: [
-          { label: 'Kyoto', value: 'Kyoto' },
-          { label: 'Osaka', value: 'Osaka' },
-          { label: 'Tokyo', value: 'Tokyo' },
-          { label: 'Yokohama', value: 'Yokohama' },
-        ],
-      },
-    ];
-  }
+  constructor() {}
 
   protected get getMainTitle(): string {
     return this.mainTitle;

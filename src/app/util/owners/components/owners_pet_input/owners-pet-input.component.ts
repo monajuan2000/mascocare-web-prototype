@@ -7,6 +7,7 @@ import {
 import { SelectItemGroup } from 'primeng/api';
 import { InputTextModule } from 'primeng/inputtext';
 import { ListDogBreedsComponent } from 'src/app/pets/list_dog_breed/list-dog-breed.component';
+import { PetListComponent } from 'src/app/pets/pet_list/pet-list.component';
 import { OverallInputComponent } from 'src/app/util/components/overall_input/overall-input.component';
 import { TitleComponent } from 'src/app/util/components/title/title.component';
 
@@ -21,6 +22,7 @@ import { TitleComponent } from 'src/app/util/components/title/title.component';
     TitleComponent,
     OverallInputComponent,
     ListDogBreedsComponent,
+    PetListComponent,
   ],
 })
 export class OwnersPetInputComponent {

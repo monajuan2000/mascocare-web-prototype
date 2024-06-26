@@ -1,27 +1,36 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {
   AbstractControl,
   FormGroup,
   ReactiveFormsModule,
 } from '@angular/forms';
 import { SelectItemGroup } from 'primeng/api';
-import { ListboxModule } from 'primeng/listbox';
-import { PetService } from '../services/pet.service';
+import { InputTextModule } from 'primeng/inputtext';
+import { ListDogBreedsComponent } from 'src/app/pets/list_dog_breed/list-dog-breed.component';
+import { OverallInputComponent } from 'src/app/util/components/overall_input/overall-input.component';
+import { TitleComponent } from 'src/app/util/components/title/title.component';
 
 @Component({
-  selector: 'app-list-dog-breeds',
-  templateUrl: './list-dog-breeds.component.html',
-  styleUrls: ['./list-dog-breeds.component.sass'],
+  selector: 'app-owners-pet-input',
+  templateUrl: './owners-pet-input.component.html',
+  styleUrls: ['./owners-pet-input.component.sass'],
   standalone: true,
-  imports: [ReactiveFormsModule, ListboxModule],
+  imports: [
+    InputTextModule,
+    ReactiveFormsModule,
+    TitleComponent,
+    OverallInputComponent,
+    ListDogBreedsComponent,
+  ],
 })
-export class ListDogBreedsComponent implements OnInit {
+export class OwnersPetInputComponent {
+  private mainTitle: string = 'Pets information';
+  private message: string = "Enter your Pet's ";
   protected groupedCities!: SelectItemGroup[];
-  private testList!: any[];
   protected selectedCountry!: any;
   @Input() petOwnerForm!: AbstractControl;
 
-  constructor(private petService: PetService) {
+  constructor() {
     this.groupedCities = [
       {
         label: 'Germany',
@@ -55,23 +64,21 @@ export class ListDogBreedsComponent implements OnInit {
       },
     ];
   }
-  ngOnInit(): void {
-    this.petService.getAllDogBreeds().subscribe({
-      next: (data) => {
-        console.log(data);
-        this.testList = data;
-      },
-      error: (error) => {
-        console.error('Error al recuperar los propietarios', error);
-      },
-    });
+
+  protected get getMainTitle(): string {
+    return this.mainTitle;
   }
 
   protected get getPetOwnerForm(): FormGroup {
     return this.petOwnerForm as FormGroup;
   }
 
-  protected get getDogBreeds(): any[] {
-    return this.testList;
+  protected get getMessage(): string {
+    return this.message;
   }
+
+  // protected get getFaDog(): IconDefinition {
+  //   console.log(faDog);
+  //   return faDog;
+  // }
 }

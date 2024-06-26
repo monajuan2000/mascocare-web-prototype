@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MainButtonComponent } from '../../components/main_button/main-button.component';
-import { OwnersBasicInputComponent } from '../components/owners-basic-input/owners-basic-input.component';
-import { OwnersContactInputComponent } from '../components/owners-contact-input/owners-contact-input.component';
+import { OwnersBasicInputComponent } from '../components/owners_basic_input/owners-basic-input.component';
+import { OwnersContactInputComponent } from '../components/owners_contact_input/owners-contact-input.component';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { OwnersPetInputComponent } from '../components/owners-pet-input/owners-pet-input.component';
+import { OwnersPetInputComponent } from '../components/owners_pet_input/owners-pet-input.component';
 import { StepsModule } from 'primeng/steps';
 import { ToastModule } from 'primeng/toast';
 import { CommonModule } from '@angular/common';
@@ -70,7 +70,7 @@ export class OwnersSignUpComponent implements OnInit {
         phone: [''],
       }),
       petOwnerForm: this.fb.group({
-        breed: [''],
+        breed: [{ value: '', disabled: true }],
         name: [''],
         age: [''],
         gender: [''],

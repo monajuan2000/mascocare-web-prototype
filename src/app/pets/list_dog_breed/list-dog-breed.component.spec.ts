@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListDogBreedsComponent } from './list-dog-breeds.component';
+import { ListDogBreedsComponent } from './list-dog-breed.component';
 
 describe('ListDogBreedsComponent', () => {
   let component: ListDogBreedsComponent;
@@ -8,7 +8,7 @@ describe('ListDogBreedsComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ListDogBreedsComponent]
+      declarations: [ListDogBreedsComponent],
     });
     fixture = TestBed.createComponent(ListDogBreedsComponent);
     component = fixture.componentInstance;

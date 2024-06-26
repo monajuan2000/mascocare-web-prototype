@@ -1,6 +1,12 @@
-import { Component } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import {
+  AbstractControl,
+  FormGroup,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { ListboxModule } from 'primeng/listbox';
+import { DogBreed } from '../payload/pet-model';
+import { PetService } from '../services/pet.service';
 
 @Component({
   selector: 'app-pet-list',
@@ -10,8 +16,30 @@ import { ListboxModule } from 'primeng/listbox';
   imports: [ReactiveFormsModule, ListboxModule],
 })
 export class PetListComponent {
-  private breedList!: any[];
-  protected get getDogBreeds(): any[] {
-    return this.breedList;
+  private petList!: DogBreed[];
+  @Input() petOwnerForm!: AbstractControl;
+  protected get getPetList(): DogBreed[] {
+    return this.petList;
+  }
+
+  constructor(private petService: PetService) {}
+
+  ngOnInit(): void {
+    this.getAListOfPetTypes();
+  }
+
+  private getAListOfPetTypes(): void {
+    this.petService.getAllPets().subscribe({
+      next: (data) => {
+        console.log(data);
+        this.petList = data;
+      },
+      error: (error) => {
+        console.error('Error al recuperar las mascotas', error);
+      },
+    });
+  }
+  protected get getPetOwnerForm(): FormGroup {
+    return this.petOwnerForm as FormGroup;
   }
 }

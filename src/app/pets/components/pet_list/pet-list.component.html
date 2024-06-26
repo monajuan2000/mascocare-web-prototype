@@ -1,0 +1,9 @@
+<div [formGroup]="getPetOwnerForm">
+  <h1>List of Pet Type</h1>
+  <p-listbox
+    formControlName="petType"
+    [options]="getPetAllowedList"
+    (onChange)="onOptionChange($event)"
+  >
+  </p-listbox>
+</div>

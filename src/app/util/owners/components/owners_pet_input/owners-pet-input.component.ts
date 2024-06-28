@@ -4,11 +4,11 @@ import {
   FormGroup,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { SelectItemGroup } from 'primeng/api';
 import { InputTextModule } from 'primeng/inputtext';
 import { ListCatBreedComponent } from 'src/app/pets/components/list_cat_breed/list-cat-breed.component';
 import { ListDogBreedsComponent } from 'src/app/pets/components/list_dog_breed/list-dog-breed.component';
 import { PetListComponent } from 'src/app/pets/components/pet_list/pet-list.component';
+import { AllowedPetTypes, PetType } from 'src/app/pets/payload/pet-model';
 import { OverallInputComponent } from 'src/app/util/components/overall_input/overall-input.component';
 import { TitleComponent } from 'src/app/util/components/title/title.component';
 
@@ -30,6 +30,7 @@ import { TitleComponent } from 'src/app/util/components/title/title.component';
 export class OwnersPetInputComponent {
   private mainTitle: string = 'Pets information';
   private message: string = "Enter your Pet's ";
+  private petSelected!: PetType;
   @Input() petOwnerForm!: AbstractControl;
 
   constructor() {}
@@ -45,6 +46,14 @@ export class OwnersPetInputComponent {
   protected get getMessage(): string {
     return this.message;
   }
+
+  protected onChildChangePetTypeSelection = (petTypeEvent: string): void => {
+    this.petSelected = { petType: petTypeEvent as AllowedPetTypes };
+    console.log(
+      'Opción seleccionada en el componente padre:',
+      this.petSelected.petType
+    );
+  };
 
   // protected get getFaDog(): IconDefinition {
   //   console.log(faDog);

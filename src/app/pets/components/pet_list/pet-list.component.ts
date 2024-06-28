@@ -1,11 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {
   AbstractControl,
   FormGroup,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { ListboxModule } from 'primeng/listbox';
-import { PetType } from '../../payload/pet-model';
+import { ListboxChangeEvent, ListboxModule } from 'primeng/listbox';
+import { AllowedPetTypes, PetType } from '../../payload/pet-model';
 import { PetService } from '../../services/pet.service';
 
 @Component({
@@ -18,9 +18,8 @@ import { PetService } from '../../services/pet.service';
 export class PetListComponent {
   private petList!: PetType[];
   private allowedPets!: PetType[];
-  private selectedOption!: string;
-
   @Input() petOwnerForm!: AbstractControl;
+  @Output() changePetTypeSelection = new EventEmitter<string>();
 
   constructor(private petService: PetService) {}
 
@@ -36,6 +35,10 @@ export class PetListComponent {
     return this.allowedPets;
   }
 
+  protected get getPetOwnerForm(): FormGroup {
+    return this.petOwnerForm as FormGroup;
+  }
+
   private getAListOfPetTypes = (): void => {
     this.petService.getAllPets().subscribe({
       next: (data) => {
@@ -48,17 +51,11 @@ export class PetListComponent {
     });
   };
 
-  private filterMainPets = () => {
+  private filterMainPets = (): void => {
     this.allowedPets = this.petList.slice(0, 3);
   };
 
-  protected get getPetOwnerForm(): FormGroup {
-    return this.petOwnerForm as FormGroup;
-  }
-
-  onOptionChange(event: any) {
-    const opcionSeleccionada = event.value;
-    console.log('Opción seleccionada:', opcionSeleccionada);
-    this.selectedOption = opcionSeleccionada;
+  protected onOptionChange(petType: string): void {
+    this.changePetTypeSelection.emit(petType);
   }
 }

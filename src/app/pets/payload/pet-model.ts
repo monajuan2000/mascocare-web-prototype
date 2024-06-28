@@ -1,3 +1,12 @@
+export type AllowedPetTypes =
+  | 'DOG'
+  | 'CAT'
+  | 'BIRD'
+  | 'FISH'
+  | 'REPTILE'
+  | 'RODENT'
+  | 'OTHER';
+
 interface Pet {
   petId: string;
   name: string;
@@ -10,7 +19,7 @@ export interface Dog extends Pet {}
 export interface Cat extends Pet {}
 
 export interface PetType {
-  petType: string;
+  petType: AllowedPetTypes;
 }
 
 export interface DogBreed {

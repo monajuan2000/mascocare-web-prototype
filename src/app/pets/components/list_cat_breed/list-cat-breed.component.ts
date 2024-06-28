@@ -7,13 +7,14 @@ import {
 } from '@angular/forms';
 import { ListboxModule } from 'primeng/listbox';
 import { PetService } from '../../services/pet.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-list-cat-breed',
   templateUrl: './list-cat-breed.component.html',
   styleUrls: ['./list-cat-breed.component.sass'],
   standalone: true,
-  imports: [ReactiveFormsModule, ListboxModule],
+  imports: [ReactiveFormsModule, ListboxModule, CommonModule],
 })
 export class ListCatBreedComponent {
   private breedList!: CatBreed[];

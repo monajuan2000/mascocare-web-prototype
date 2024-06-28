@@ -7,13 +7,14 @@ import {
 import { ListboxModule } from 'primeng/listbox';
 import { PetService } from '../../services/pet.service';
 import { DogBreed } from '../../payload/pet-model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-list-dog-breed',
   templateUrl: './list-dog-breed.component.html',
   styleUrls: ['./list-dog-breed.component.sass'],
   standalone: true,
-  imports: [ReactiveFormsModule, ListboxModule],
+  imports: [ReactiveFormsModule, ListboxModule, CommonModule],
 })
 export class ListDogBreedsComponent implements OnInit {
   private breedList!: DogBreed[];

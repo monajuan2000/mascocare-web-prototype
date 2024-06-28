@@ -3,7 +3,7 @@
   <p-listbox
     formControlName="petType"
     [options]="getPetAllowedList"
-    (onChange)="onOptionChange($event)"
+    (onChange)="onOptionChange($event.value)"
   >
   </p-listbox>
 </div>

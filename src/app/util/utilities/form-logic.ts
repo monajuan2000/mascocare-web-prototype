@@ -1,6 +1,5 @@
 import { Router } from '@angular/router';
 import { AuthService } from '../security/services/auth.service';
-import { ErrorHandlingService } from '../errors/error-handling.service';
 import { OverallDialogService } from '../services/dialog/overall-dialog.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NGXLogger } from 'ngx-logger';
@@ -15,7 +14,6 @@ import { HttpErrorRequest } from '../errors/http-error-request';
 
 export class FormLogic {
   constructor(
-    private errorService: ErrorHandlingService,
     private authService: AuthService,
     private dialogService: OverallDialogService,
     private router: Router,

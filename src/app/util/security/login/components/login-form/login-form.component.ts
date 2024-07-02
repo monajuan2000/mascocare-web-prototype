@@ -1,29 +1,23 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
-import { BaseRequest } from 'src/app/util/request/base-request.model';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Password } from 'primeng/password';
-import { AuthenticationRequest } from '../../../request/base-request.model';
-import { NGXLogger } from 'ngx-logger';
-import { ErrorHandlingService } from 'src/app/util/errors/error-handling.service';
-import { OverallDialogService } from 'src/app/util/services/dialog/overall-dialog.service';
-import { stringConstants } from 'src/app/util/constants/string-constants';
-import { anotherConstants } from 'src/app/util/constants/another-constants';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { FormLogic } from 'src/app/util/utilities/form-logic';
+import { AuthService } from '../../../services/auth.service';
+import { OverallDialogService } from 'src/app/util/services/dialog/overall-dialog.service';
+import { Router } from '@angular/router';
+import { NGXLogger } from 'ngx-logger';
+import { stringConstants } from 'src/app/util/constants/string-constants';
 
 @Component({
-  selector: 'app-logging-form',
-  templateUrl: './logging-form.component.html',
-  styleUrls: ['./logging-form.component.sass'],
+  selector: 'app-login-form',
+  templateUrl: './login-form.component.html',
+  styleUrls: ['./login-form.component.sass'],
 })
-export class LoggingFormComponent {
+export class LoginFormComponent {
   redirectUrl: string | undefined;
   logginForm: FormGroup;
   formLogic: FormLogic;
 
   constructor(
-    private errorService: ErrorHandlingService,
     private authService: AuthService,
     private dialogService: OverallDialogService,
     private router: Router,
@@ -48,7 +42,6 @@ export class LoggingFormComponent {
 
   private newFormLogic = (): FormLogic => {
     return (this.formLogic = new FormLogic(
-      this.errorService,
       this.authService,
       this.dialogService,
       this.router,

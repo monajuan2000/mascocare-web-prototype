@@ -31,7 +31,6 @@ import { SecurityModule } from './util/security/security.module';
   declarations: [
     AppComponent,
     OwnersListComponent,
-    HomeComponent,
     OverallDialogComponent,
     OverallDialogStructureComponent,
     ErrorDialogComponent,

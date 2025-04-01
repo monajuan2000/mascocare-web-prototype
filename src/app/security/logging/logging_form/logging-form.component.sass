@@ -5,14 +5,15 @@
     @include align-completely()
 
 input::placeholder
-    color: $overall-white
+    color: $overall-black
     @include roboto-font-style()
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active
-    -webkit-box-shadow: 0 0 0 30px $input-autofill-blue-900 inset !important
-    -webkit-text-fill-color: $overall-white
+    -webkit-box-shadow: 0 0 0 30px $overall-black inset !important
+    -webkit-text-fill-color: $overall-black
 .input
     @include overall-input()
     @include roboto-font-style()
+    border-color: $overall-black !important

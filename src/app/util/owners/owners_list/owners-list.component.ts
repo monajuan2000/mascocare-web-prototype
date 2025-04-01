@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { OwnerService } from '../services/owner.service';
+import { Owner } from '../payload/owner-model';
 
 @Component({
   selector: 'app-owners-list',
   templateUrl: './owners-list.component.html',
-  styleUrls: ['./owners-list.component.sass']
+  styleUrls: ['./owners-list.component.sass'],
 })
 export class OwnersListComponent implements OnInit {
-  owners: any[] = [];
+  owners: Owner[] = [];
 
   constructor(private servicio: OwnerService) {}
 

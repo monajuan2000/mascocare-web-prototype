@@ -1,11 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
-import {
-  AuthenticationRequest,
-  BaseRequest,
-} from '../../request/base-request.model';
-import { apiUrl } from '../../constants/api-url';
+import { apiUrl } from 'src/app/util/constants/api-url';
+import { BaseRequest } from 'src/app/util/request/base-request.model';
+import { AuthenticationRequest } from '../request/mock-credentials';
 
 @Injectable({
   providedIn: 'root',

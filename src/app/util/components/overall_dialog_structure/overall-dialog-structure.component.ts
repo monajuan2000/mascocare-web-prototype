@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { OverallDialogService } from '../../services/dialog/overall-dialog.service';
-import { HttpErrorRequest } from '../../Errors/http-error-request';
+import { HttpErrorRequest } from '../../errors/http-error-request';
 
 @Component({
   selector: 'app-overall-dialog-structure',

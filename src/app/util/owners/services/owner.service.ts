@@ -1,20 +1,20 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { apiUrl } from '../../constants/api-url';
+import { MOCK_CREDENTIALS } from 'src/app/security/request/mock-credentials';
+import { Owner } from '../payload/owner-model';
 
 @Injectable({ providedIn: 'root' })
 export class OwnerService {
   constructor(private http: HttpClient) {}
 
-  getAllOwners(): Observable<any> {
-    const username = 'monajuan2000_user';
-    const password = 'MonaBermudez30';
-    const authHeader = 'Basic ' + btoa(username + ':' + password);
-    return this.http.get(
-      'http://localhost:8080/mascocarev1-api/util/owners/getAllOwners?version=1',
-      {
-        headers: { Authorization: authHeader },
-      }
-    );
+  getAllOwners(): Observable<Owner[]> {
+    const authHeader =
+      'Basic ' +
+      btoa(MOCK_CREDENTIALS.username + ':' + MOCK_CREDENTIALS.password);
+    return this.http.get<Owner[]>(apiUrl.ALL_OWNERS_URL, {
+      headers: { Authorization: authHeader },
+    });
   }
 }

@@ -2,13 +2,15 @@
 
 # Compiled output
 /tmp
+/dist
 /out-tsc
 /bazel-out
 
 # Node
 /node_modules
-npm-debug.log
-yarn-error.log
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
 # IDEs and editors
 .idea/
@@ -25,16 +27,20 @@ yarn-error.log
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-.history/*
+.history/
 
-# Miscellaneous
-/.angular/cache
+# Angular
+/.angular/
 .sass-cache/
-/connect.lock
+.connect.lock
 /coverage
-/libpeerconnection.log
+
+# Logs
+*.log
 testem.log
-/typings
+
+# Environment variables (para evitar exponer claves API)
+src/environments/environment*.ts
 
 # System files
 .DS_Store

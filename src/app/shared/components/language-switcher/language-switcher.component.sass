@@ -1,0 +1,28 @@
+:host
+  position: fixed
+  top: 1rem
+  right: 1rem
+  z-index: 1100
+
+.language-switcher
+  display: inline-flex
+  align-items: center
+  gap: 0.4rem
+  padding: 0.35rem 0.6rem
+  border-radius: 999px
+  background-color: rgba(255, 255, 255, 0.9)
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15)
+
+  button
+    border: 0
+    padding: 0.25rem
+    color: #222959
+    background: transparent
+    cursor: pointer
+
+    &[aria-pressed='true']
+      font-weight: 700
+
+  button:focus-visible
+    outline: 2px solid #222959
+    outline-offset: 2px

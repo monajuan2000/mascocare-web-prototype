@@ -1,0 +1,33 @@
+@use 'src/theme' as *
+
+:host
+  display: block
+
+button
+  @include roboto-font-style()
+  width: 10rem
+  min-height: 2.8rem
+  border: none
+  border-radius: 0.75rem
+  font-size: 0.95rem
+  font-weight: 700
+  transition: transform 160ms ease, box-shadow 160ms ease
+
+  &:hover:not(:disabled)
+    transform: translateY(-1px)
+    box-shadow: 0 0.55rem 1.2rem rgba(34, 41, 89, 0.2)
+
+  &:focus-visible
+    outline: 3px solid rgba(232, 87, 99, 0.32)
+    outline-offset: 3px
+
+  &.login-submit
+    width: 100%
+    min-height: 3.25rem
+    border-radius: 0.8rem
+    background: linear-gradient(110deg, #e8586a, #d74761)
+    box-shadow: 0 0.65rem 1.4rem rgba(216, 71, 97, 0.2)
+
+@media (prefers-reduced-motion: reduce)
+  button
+    transition: none

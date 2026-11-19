@@ -1,0 +1,49 @@
+$logotype-1: rgb(232, 87, 99)
+$logotype-2: rgb(34, 41, 89)
+$logotype-3: rgba(232, 87, 99, 0.4)
+$error-red: rgba(255, 0, 0, 0.6)
+$warning-yellow: rgba(255, 255, 0, 0.6)
+$overall-white: rgb(255, 255, 255)
+$overall-black: rgb(0, 0, 0)
+$transparent: rgba(128, 128, 128, 0.4)
+$transparent-2: rgba(128, 128, 128, 0.2)
+$gradient-1: linear-gradient(to right, $logotype-1, $logotype-2)
+$gradient-2: linear-gradient(to right, $logotype-1, $logotype-3)
+$justify-content-center: center
+$align-items-center: center
+$display-flex: flex
+$height-100: 100%
+$font-size-40px: 40px
+
+@mixin align-completely()
+  display: $display-flex
+  align-items: $align-items-center
+  justify-content: $justify-content-center
+
+@mixin align-horizontally($justify-content)
+  display: $display-flex
+  justify-content: $justify-content
+
+@mixin white-gradient($param1, $param2)
+  background-image: linear-gradient(to right, $param1, $param2)
+  color: $overall-white
+
+@mixin pacifico-font-style()
+  font-family: 'Pacifico', cursive !important
+  color: $overall-black
+  font-style: normal
+  font-size: 20px
+
+@mixin roboto-font-style()
+  font-family: 'Roboto', sans-serif !important
+  color: $overall-black
+  font-style: normal
+  font-size: 20px
+
+@mixin overall-input()
+  width: min(600px, 100%) !important
+  background-color: $transparent-2 !important
+
+@mixin background-main-image()
+  background-image: url('assets/images/MASCOCARE_PAGE_MAIN_IMAGE.png')
+  background-size: 100% 100%

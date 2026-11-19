@@ -1,0 +1,37 @@
+<div id="security-main-title">{{ 'welcome' | translate }}</div>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="login-fields">
+    <label class="login-field" for="login-username">
+      <span>{{ 'username' | translate }}</span>
+    <input
+      id="login-username"
+      type="text"
+      autocomplete="username"
+      [attr.aria-label]="'username' | translate"
+      class="input"
+      [placeholder]="'username' | translate"
+      formControlName="username"
+    />
+    </label>
+    <label class="login-field" for="login-password">
+      <span>{{ 'password' | translate }}</span>
+    <input
+      id="login-password"
+      type="password"
+      autocomplete="current-password"
+      [attr.aria-label]="'password' | translate"
+      class="input"
+      [placeholder]="'password' | translate"
+      formControlName="password"
+    />
+    </label>
+  </div>
+
+  <app-main-button
+    [label]="'send' | translate"
+    [type]="'submit'"
+    [icon]="'pi pi-arrow-right'"
+    [invalid]="loginForm.invalid"
+    classes="login-submit"
+  ></app-main-button>
+</form>

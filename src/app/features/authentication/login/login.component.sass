@@ -1,0 +1,194 @@
+:host
+  display: block
+  min-height: 100vh
+
+.login-page
+  display: grid
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.9fr)
+  min-height: 100vh
+  padding: 1.25rem
+  gap: 1.25rem
+  background: #f7f8fc
+
+.brand-panel
+  position: relative
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  min-height: calc(100vh - 2.5rem)
+  padding: clamp(2rem, 5vw, 4.5rem)
+  overflow: hidden
+  border-radius: 2rem
+  color: #fff
+  background: linear-gradient(145deg, rgba(28, 35, 76, 0.97), rgba(34, 41, 89, 0.95) 55%, rgba(80, 46, 105, 0.93))
+
+  &::after
+    position: absolute
+    right: -9rem
+    bottom: -11rem
+    width: 29rem
+    height: 29rem
+    border: 1px solid rgba(255, 255, 255, 0.12)
+    border-radius: 50%
+    content: ''
+    pointer-events: none
+
+.brand-message,
+.brand-art,
+.brand-footer
+  position: relative
+  z-index: 1
+
+.brand-wordmark,
+.mobile-wordmark
+  display: inline-flex
+  align-items: center
+  gap: 0.65rem
+  color: inherit
+  font-family: 'Pacifico', cursive
+  font-size: 1.45rem
+  text-decoration: none
+
+  i
+    color: #ff8291
+    font-size: 1.1rem
+
+.brand-kicker,
+.login-eyebrow
+  margin: clamp(2.5rem, 7vh, 5rem) 0 0.8rem
+  color: #ff9aa6
+  font-size: 0.74rem
+  font-weight: 700
+  letter-spacing: 0.16em
+  text-transform: uppercase
+
+.brand-message h1
+  max-width: 13ch
+  margin: 0
+  font-size: clamp(2.4rem, 4.1vw, 4.1rem)
+  font-weight: 700
+  letter-spacing: -0.055em
+  line-height: 1.08
+
+.brand-description
+  max-width: 34rem
+  margin: 1.2rem 0 0
+  color: rgba(255, 255, 255, 0.74)
+  font-size: 1.05rem
+  line-height: 1.75
+
+.brand-art
+  display: flex
+  justify-content: center
+  width: 100%
+  margin: 0.5rem auto
+
+  img
+    display: block
+    width: min(100%, 35rem)
+    height: auto
+    filter: drop-shadow(0 1.5rem 2rem rgba(10, 14, 38, 0.28))
+
+.brand-footer
+  margin: 0
+  color: rgba(255, 255, 255, 0.65)
+  font-size: 0.82rem
+
+.login-content
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  min-width: 0
+  padding: 4rem clamp(1.25rem, 5vw, 5rem)
+
+.login-card
+  width: min(100%, 27rem)
+
+.mobile-wordmark
+  display: none
+  color: #222959
+
+.login-eyebrow
+  margin: 0 0 0.55rem
+  color: #e8586a
+
+.login-card h2
+  margin: 0
+  color: #20264d
+  font-size: clamp(2rem, 3.2vw, 2.65rem)
+  font-weight: 700
+  letter-spacing: -0.045em
+
+.login-description
+  margin: 0.8rem 0 2rem
+  color: #70758c
+  font-size: 0.98rem
+  line-height: 1.65
+
+.login-note
+  width: min(100%, 27rem)
+  margin: 2.5rem 0 0
+  color: #9094a6
+  font-size: 0.78rem
+  text-align: center
+
+@media (max-width: 900px)
+  .login-page
+    grid-template-columns: minmax(0, 0.85fr) minmax(380px, 1fr)
+
+  .brand-panel
+    padding: 2.25rem
+
+  .brand-art img
+    width: min(120%, 30rem)
+    max-width: none
+
+@media (max-width: 700px)
+  .login-page
+    display: block
+    min-height: 100vh
+    padding: 0
+
+  .brand-panel
+    min-height: 0
+    padding: 4.5rem 1.5rem 1.75rem
+    border-radius: 0 0 1.75rem 1.75rem
+
+  .brand-panel .brand-wordmark,
+  .brand-panel .brand-footer,
+  .brand-panel .brand-art
+    display: none
+
+  .brand-kicker
+    margin: 0 0 0.55rem
+    font-size: 0.68rem
+
+  .brand-message h1
+    max-width: 15ch
+    font-size: clamp(1.9rem, 8vw, 2.7rem)
+
+  .brand-description
+    margin-top: 0.65rem
+    font-size: 0.9rem
+
+  .login-content
+    padding: 2.5rem 1.5rem 2rem
+
+  .mobile-wordmark
+    display: inline-flex
+    margin-bottom: 2rem
+
+  .login-card h2
+    font-size: 2rem
+
+  .login-note
+    margin-top: 2rem
+
+@media (prefers-reduced-motion: reduce)
+  *,
+  *::before,
+  *::after
+    scroll-behavior: auto !important
+    animation-duration: 0.01ms !important
+    transition-duration: 0.01ms !important

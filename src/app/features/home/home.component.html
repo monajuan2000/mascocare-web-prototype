@@ -1,0 +1,76 @@
+<div id="home-container">
+  <app-main-toolbar></app-main-toolbar>
+
+  <main class="home-content">
+    <section class="home-hero">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">
+          <i class="pi pi-sparkles" aria-hidden="true"></i>
+          {{ 'homeEyebrow' | translate }}
+        </p>
+        <h1>{{ 'homeHeadline' | translate }}</h1>
+        <p class="hero-description">{{ 'homeDescription' | translate }}</p>
+        <a
+          class="hero-action"
+          routerLink="/mascocare-web-prototype/owners/owners-list"
+        >
+          {{ 'homeCta' | translate }}
+          <i class="pi pi-arrow-right" aria-hidden="true"></i>
+        </a>
+        <div class="hero-note">
+          <span class="note-icon"><i class="pi pi-heart-fill" aria-hidden="true"></i></span>
+          <span>{{ 'homePromise' | translate }}</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="visual-orbit"></div>
+        <img src="assets/images/MASCOCARE_MAIN_IMAGE.png" alt="" />
+        <span class="visual-badge">
+          <i class="pi pi-star-fill" aria-hidden="true"></i>
+          {{ 'homeBadge' | translate }}
+        </span>
+      </div>
+    </section>
+
+    <section class="home-actions" aria-labelledby="home-actions-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-eyebrow">{{ 'homeSectionEyebrow' | translate }}</p>
+          <h2 id="home-actions-title">{{ 'homeSectionTitle' | translate }}</h2>
+        </div>
+        <p>{{ 'homeSectionDescription' | translate }}</p>
+      </div>
+
+      <div class="action-grid">
+        <a
+          class="action-card owners-card"
+          routerLink="/mascocare-web-prototype/owners/owners-list"
+        >
+          <span class="action-icon"><i class="pi pi-users" aria-hidden="true"></i></span>
+          <span class="action-card-copy">
+            <strong>{{ 'ownersCardTitle' | translate }}</strong>
+            <span>{{ 'ownersCardDescription' | translate }}</span>
+          </span>
+          <span class="action-arrow" aria-hidden="true">
+            <i class="pi pi-arrow-up-right"></i>
+          </span>
+        </a>
+
+        <a
+          class="action-card profile-card"
+          routerLink="/mascocare-web-prototype/owners/owners-sign-up"
+        >
+          <span class="action-icon"><i class="pi pi-user-plus" aria-hidden="true"></i></span>
+          <span class="action-card-copy">
+            <strong>{{ 'profileCardTitle' | translate }}</strong>
+            <span>{{ 'profileCardDescription' | translate }}</span>
+          </span>
+          <span class="action-arrow" aria-hidden="true">
+            <i class="pi pi-arrow-up-right"></i>
+          </span>
+        </a>
+      </div>
+    </section>
+  </main>
+</div>

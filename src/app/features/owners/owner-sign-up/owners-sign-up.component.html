@@ -1,0 +1,84 @@
+<form id="owner-sign-up-form" class="flex flex-column gap-2">
+  <div class="flex flex-column gap-1 owner-sign-up-input">
+    <label for="first-name">{{ 'firstName' | translate }}</label>
+    <input
+      pInputText
+      id="first-name"
+      autocomplete="given-name"
+      [attr.aria-label]="'firstName' | translate"
+      aria-describedby="first-name-help"
+      [placeholder]="'firstName' | translate"
+    />
+    <small id="first-name-help">{{ 'enterFirstName' | translate }}</small>
+  </div>
+
+  <div class="flex flex-column gap-1 owner-sign-up-input">
+    <label for="last-name">{{ 'lastName' | translate }}</label>
+    <input
+      pInputText
+      id="last-name"
+      autocomplete="family-name"
+      [attr.aria-label]="'lastName' | translate"
+      aria-describedby="last-name-help"
+      [placeholder]="'lastName' | translate"
+    />
+    <small id="last-name-help">{{ 'enterLastName' | translate }}</small>
+  </div>
+
+  <div class="flex flex-column gap-1 owner-sign-up-input">
+    <label for="birth-date">{{ 'birthDate' | translate }}</label>
+    <p-calendar
+      [(ngModel)]="ownerBirthDate"
+      [ngModelOptions]="{ standalone: true }"
+      [showIcon]="true"
+      inputId="birth-date"
+      [placeholder]="'selectBirthDate' | translate"
+    />
+  </div>
+
+  <fieldset class="flex flex-column gap-1 owner-sign-up-input">
+    <legend>{{ 'gender' | translate }}</legend>
+    <div class="flex align-items-center">
+      <p-radioButton
+        inputId="gender-male"
+        name="gender"
+        value="MALE"
+        [(ngModel)]="gender"
+      />
+      <label for="gender-male" class="ml-2">{{ 'male' | translate }}</label>
+    </div>
+    <div class="flex align-items-center">
+      <p-radioButton
+        inputId="gender-female"
+        name="gender"
+        value="FEMALE"
+        [(ngModel)]="gender"
+      />
+      <label for="gender-female" class="ml-2">{{ 'female' | translate }}</label>
+    </div>
+  </fieldset>
+
+  <div class="flex flex-column gap-1 owner-sign-up-input">
+    <label for="payment-info">{{ 'paymentInfo' | translate }}</label>
+    <input
+      pInputText
+      id="payment-info"
+      aria-describedby="payment-info-help"
+      disabled
+    />
+    <small id="payment-info-help">{{ 'enterPaymentInfo' | translate }}</small>
+  </div>
+
+  <div class="flex flex-column gap-1 owner-sign-up-input">
+    <label for="insurance-info">{{ 'insuranceInfo' | translate }}</label>
+    <input
+      pInputText
+      id="insurance-info"
+      aria-describedby="insurance-info-help"
+      disabled
+    />
+    <small id="insurance-info-help">
+      {{ 'enterInsuranceInfo' | translate }}
+    </small>
+  </div>
+</form>

@@ -1,0 +1,34 @@
+<main class="login-page">
+  <section class="brand-panel" aria-label="Mascocare">
+    <div class="brand-message">
+      <a class="brand-wordmark" routerLink="/mascocare-web-prototype/home">
+        <i class="pi pi-heart-fill" aria-hidden="true"></i>
+        <span>Mascocare</span>
+      </a>
+      <p class="brand-kicker">{{ 'loginEyebrow' | translate }}</p>
+      <h1>{{ 'loginHeadline' | translate }}</h1>
+      <p class="brand-description">{{ 'loginTagline' | translate }}</p>
+    </div>
+
+    <div class="brand-art" aria-hidden="true">
+      <img src="assets/images/MASCOCARE_LOGGING_IMAGE.png" alt="" />
+    </div>
+
+    <p class="brand-footer">{{ 'loginFooter' | translate }}</p>
+  </section>
+
+  <section class="login-content">
+    <div class="login-card">
+      <a class="mobile-wordmark" routerLink="/mascocare-web-prototype/home">
+        <i class="pi pi-heart-fill" aria-hidden="true"></i>
+        <span>Mascocare</span>
+      </a>
+      <p class="login-eyebrow">{{ 'loginEyebrow' | translate }}</p>
+      <h2>{{ 'welcome' | translate }}</h2>
+      <p class="login-description">{{ 'loginDescription' | translate }}</p>
+      <app-login-form></app-login-form>
+      <app-links-login></app-links-login>
+    </div>
+    <p class="login-note">{{ 'loginPrivacy' | translate }}</p>
+  </section>
+</main>

@@ -1,0 +1,59 @@
+:host
+  display: block
+
+#security-main-title
+  position: absolute
+  width: 1px
+  height: 1px
+  padding: 0
+  margin: -1px
+  overflow: hidden
+  clip: rect(0, 0, 0, 0)
+  white-space: nowrap
+  border: 0
+
+.login-fields
+  display: grid
+  gap: 1.15rem
+  margin-bottom: 1.5rem
+
+.login-field
+  display: grid
+  gap: 0.55rem
+  color: #333954
+  font-size: 0.87rem
+  font-weight: 600
+
+.input
+  width: 100%
+  min-height: 3.35rem
+  padding: 0.85rem 1rem
+  border: 1px solid #dfe2eb
+  border-radius: 0.8rem
+  outline: none
+  background: #fff
+  color: #242a4e
+  font: inherit
+  font-size: 0.95rem
+  transition: border-color 160ms ease, box-shadow 160ms ease
+
+  &::placeholder
+    color: #a2a6b5
+    font-weight: 400
+
+  &:hover
+    border-color: #b7bdd0
+
+  &:focus
+    border-color: #e8586a
+    box-shadow: 0 0 0 4px rgba(232, 88, 106, 0.12)
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus
+    -webkit-text-fill-color: #242a4e
+    box-shadow: 0 0 0 1000px #fff inset
+
+@media (prefers-reduced-motion: reduce)
+  .input
+    transition: none

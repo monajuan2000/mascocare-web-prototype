@@ -1,0 +1,15 @@
+<app-overall-dialog
+  [message]="'loadingMessage' | translate"
+  [header]="'loading' | translate"
+  *ngIf="dialogStyle === 'overall-dialog'"
+></app-overall-dialog>
+<app-error-dialog
+  [message]="errorRequest?.message ?? ''"
+  [header]="'error' | translate"
+  *ngIf="dialogStyle === 'error-dialog'"
+></app-error-dialog>
+<app-warning-dialog
+  [message]="'warningMessage' | translate"
+  [header]="'warning' | translate"
+  *ngIf="dialogStyle === 'warning-dialog'"
+></app-warning-dialog>

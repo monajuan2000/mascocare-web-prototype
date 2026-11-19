@@ -1,0 +1,19 @@
+<nav class="language-switcher" [attr.aria-label]="'languageSelector' | translate">
+  <button
+    type="button"
+    [attr.aria-label]="'switchToEnglish' | translate"
+    [attr.aria-pressed]="currentLanguage === 'en'"
+    (click)="setLanguage('en')"
+  >
+    EN
+  </button>
+  <span aria-hidden="true">|</span>
+  <button
+    type="button"
+    [attr.aria-label]="'switchToSpanish' | translate"
+    [attr.aria-pressed]="currentLanguage === 'es'"
+    (click)="setLanguage('es')"
+  >
+    ES
+  </button>
+</nav>

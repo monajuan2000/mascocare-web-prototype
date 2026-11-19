@@ -1,0 +1,38 @@
+<p-table
+  [value]="owners"
+  [paginator]="true"
+  [rows]="5"
+  [showCurrentPageReport]="true"
+  [tableStyle]="{ 'min-width': '50rem' }"
+  [currentPageReportTemplate]="'showingRecords' | translate"
+  [rowsPerPageOptions]="[5, 10, 20]"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th style="width: 33%">{{ 'personId' | translate }}</th>
+      <th style="width: 33%">{{ 'fullName' | translate }}</th>
+      <th style="width: 33%">{{ 'birthDate' | translate }}</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-owner>
+    <tr>
+      <td>{{ owner.personId }}</td>
+      <td>{{ owner.firstName }} {{ owner.lastName }}</td>
+      <td>{{ owner.birthDate | date : "yyyy-MM-dd" }}</td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="paginatorleft">
+    <p-button
+      type="button"
+      icon="pi pi-plus"
+      styleClass="p-button-text"
+    ></p-button>
+  </ng-template>
+  <ng-template pTemplate="paginatorright">
+    <p-button
+      type="button"
+      icon="pi pi-cloud"
+      styleClass="p-button-text"
+    ></p-button>
+  </ng-template>
+</p-table>

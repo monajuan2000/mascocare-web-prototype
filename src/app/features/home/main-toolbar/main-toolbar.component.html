@@ -1,0 +1,36 @@
+<header class="site-header">
+  <a
+    class="site-brand"
+    routerLink="/mascocare-web-prototype/home"
+    [attr.aria-label]="'home' | translate"
+  >
+    <span class="brand-icon"><i class="pi pi-heart-fill" aria-hidden="true"></i></span>
+    <span>Mascocare</span>
+  </a>
+
+  <nav class="site-nav" [attr.aria-label]="'mainNavigation' | translate">
+    <a
+      routerLink="/mascocare-web-prototype/home"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <i class="pi pi-home" aria-hidden="true"></i>
+      {{ 'home' | translate }}
+    </a>
+    <a
+      routerLink="/mascocare-web-prototype/owners/owners-list"
+      routerLinkActive="active"
+    >
+      <i class="pi pi-users" aria-hidden="true"></i>
+      {{ 'owners' | translate }}
+    </a>
+  </nav>
+
+  <div class="account-chip">
+    <img
+      src="assets/images/TEMPORAL_USER_IMAGE.png"
+      [alt]="'welcomeUser' | translate"
+    />
+    <span>{{ 'welcomeUser' | translate }}</span>
+  </div>
+</header>
